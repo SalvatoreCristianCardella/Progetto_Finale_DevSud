@@ -1,23 +1,24 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Ciao Benny</a>
+<nav class="navbar navbar-expand-lg nav-custom">
+  <div class="container-fluid mx-5">
+    <a class="navbar-brand" href="#"><img src="/img/logo.png" class="img-custom" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0 w-100 d-flex justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{route('product.index')}}">Tutti gli articoli</a>
+          <a class="nav-link color-custom fs-4" aria-current="page" href="{{route('product.index')}}">Tutti gli articoli</a>
         </li>
         @auth
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{route('product.create')}}">Crea Annuncio</a>
+          <a class="nav-link " aria-current="page" href="{{route('product.create')}}">Crea Annuncio</a>
         </li>  
         @endauth     
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Cerca tra gli annunci" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Cerca</button>
+        <input class="form-control me-2 search-custom" type="search" placeholder="Cerca tra gli annunci" aria-label="Search">
+        <button class="button-57 me-4 d-flex justify-content-center" type="submit" role="button"><span class="text"><i class="fa-solid fa-magnifying-glass fa-bounce"></i></span><span>Cerca annunci</span></button>
+        
       </form>
       {{-- Bottoni registrati e login --}}
       @if (Auth::user() != null)
