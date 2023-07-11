@@ -15,6 +15,16 @@
         </li>  
         @endauth     
       </ul>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          @foreach ($categories as $category)
+          <li><a href="{{route('category.show', compact('category'))}}">{{$category->name}}</a></li>
+          @endforeach
+        </ul> 
+      </div>
       <form class="d-flex" role="search">
         <input class="form-control me-2 search-custom" type="search" placeholder="Cerca tra gli annunci" aria-label="Search">
         <button class="button-57 me-4 d-flex justify-content-center" type="submit" role="button"><span class="text"><i class="fa-solid fa-magnifying-glass fa-bounce"></i></span><span>Cerca annunci</span></button>

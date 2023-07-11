@@ -12,33 +12,25 @@ class ProductForm extends Component
     public $title;
     public $description;
     public $price;
-    public $category_id;
-    public $categories;
-    // public $selectedCategoryAll = [];
-    // public Product $product;
+    public $category;
+    public $product;
     protected $rules = [
         'title'=>'required|min:4',
         'description'=>'required|min:15',
         'price'=>'required|numeric',
-        'category_id'=>'required',
+        'category'=>'required',
     ];
-    // public function mount() 
-    // {
-    //     $this->title = $this->product->title; 
-    //     $this->description = $this->product->description; 
-    //     $this->price = $this->product->price;
-    //     $this->category_id = $this->product->category_id->pluck('id')->toArray(); 
-    // }
+    
    
     public function store(){
         $this->validate();
-        Product::create([
+        $this->product = Category::find($this->category)->products()->create([
             'user_id'=>Auth::user()->id,
             'title'=>$this->title,
             'description'=>$this->description,
             'price'=>$this->price,
-            'category_id' => $this->category_id,
         ]);
+
         $this->reset();
         return to_route('product.index')->with('message', 'Articolo aggiunto correttamente');
         
@@ -46,8 +38,7 @@ class ProductForm extends Component
     }
     public function render()
     {
-        $categories = Category::all();
-        return view('livewire.product-form', compact('categories'));
+        return view('livewire.product-form');
     }
     
 }

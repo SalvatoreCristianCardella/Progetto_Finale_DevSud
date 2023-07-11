@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
@@ -14,12 +15,12 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[FrontController::class,'home'])->name('home');
+
 Route::middleware(['auth'])->group(function(){
     Route::get('/create/product',  [ProductController::class, 'create'])->name('product.create');
 });
 Route::get('/index/product',  [ProductController::class, 'index'])->name('product.index');
-
+Route::get('/show/product/{product}',  [ProductController::class, 'show'])->name('product.show');
+Route::get('/show/product/{category}',  [FrontController::class, 'show'])->name('category.show');
 
