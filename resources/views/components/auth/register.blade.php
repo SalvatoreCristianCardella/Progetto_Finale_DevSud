@@ -31,6 +31,6 @@
       <div class="alert text-danger">{{ $message }}</div>
       @enderror
   </div>
-  <a href="{{route('product.create')}}"><button type="submit"class="btn btn-primary">Submit</button></a>
+  <a href="{{route('product.create')}}"><button type=""class="btn btn-primary">Submit</button></a>
   
 </form>

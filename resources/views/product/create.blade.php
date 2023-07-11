@@ -1,5 +1,6 @@
 <x-layout>
-<livewire:product-form />
+
+    <livewire:product-form />
 
 
 </x-layout>

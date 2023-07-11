@@ -22,5 +22,7 @@ Route::middleware(['auth'])->group(function(){
 });
 Route::get('/index/product',  [ProductController::class, 'index'])->name('product.index');
 Route::get('/show/product/{product}',  [ProductController::class, 'show'])->name('product.show');
-Route::get('/show/product/{category}',  [FrontController::class, 'show'])->name('category.show');
+Route::get('/show/category/{category}',  [FrontController::class, 'show'])->name('category.show');
+
+Route::get('/search/product',[ProductController::class,'search'])->name('product.search');
 

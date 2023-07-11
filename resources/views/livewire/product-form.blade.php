@@ -10,11 +10,12 @@
         <textarea  class="form-control" wire:model="description" cols="30" rows="10" type="description" id="description"></textarea>
         @error('description') <span class="text-danger fst-italic">{{ $message }}</span> @enderror
       </div>
-      <div class="mb-3">
+      {{-- IMMAGINE --}}
+      {{-- <div class="mb-3">
         <label for="img" class="form-label">img</label>
         <input class="form-control" type="file" id="img">
         @error('title') <span class="text-danger fst-italic">{{ $message }}</span> @enderror
-      </div>
+      </div> --}}
         <div class="mb-3">
           <label for="category" class="form-label">Categorie</label>
           <select wire:model.defer="category" class="form-select">

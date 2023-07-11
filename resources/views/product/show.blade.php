@@ -7,7 +7,8 @@
                 <h1>Dettaglio prodotto: {{$product->title}} </h1>
 
             </div>
-            <div class="col-12 col-md-6">
+            
+            <div class="col-12 col-md-6"> 
                 <div class="container-gallery">
 	
                     <div class="feature">

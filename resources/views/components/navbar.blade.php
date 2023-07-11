@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top nav-custom">
   <div class="container-fluid mx-5">
-    <a class="navbar-brand" href="#"><img src="/img/logo.png" class="img-custom" alt=""></a>
+    <a class="navbar-brand" href="{{ route('home')}}"><img src="/img/logo.png" class="img-custom" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,11 +28,12 @@
       </li>  
       </ul>
       
-      <form class="d-flex" role="search">
-        <input class="form-control me-2 search-custom" type="search" placeholder="Cerca tra gli annunci" aria-label="Search">
+      <form class="d-flex" role="search" action="{{route('product.search')}}" method="GET">
+        <input class="form-control me-2 search-custom" type="search" placeholder="Cerca tra gli annunci" aria-label="Search" name='chiavediricerca'>
         <button class="button-57 me-4 d-flex justify-content-center" type="submit" role="button"><span class="text"><i class="fa-solid fa-magnifying-glass fa-bounce"></i></span><span>Cerca annunci</span></button>
         
       </form>
+ 
       {{-- Bottoni registrati e login --}}
       @if (Auth::user() != null)
                 <span class="nav-link ms-5  color-custom fs-5 text-dark">{{ Auth::user()->name }}</span>

@@ -1,6 +1,7 @@
+
 var gallery = document.querySelector('.gallery');
 var galleryItems = document.querySelectorAll('.gallery-item');
-var numOfItems = gallery.children.length;
+// var numOfItems = gallery.children?.length;
 var itemWidth = 23; // percent: as set in css
 
 var featured = document.querySelector('.featured-item');
@@ -86,10 +87,10 @@ function stopMovement() {
 	clearInterval(rightInterval);
 }
 
-leftBtn.addEventListener('mouseenter', moveLeft);
-leftBtn.addEventListener('mouseleave', stopMovement);
-rightBtn.addEventListener('mouseenter', moveRight);
-rightBtn.addEventListener('mouseleave', stopMovement);
+leftBtn?.addEventListener('mouseenter', moveLeft);
+leftBtn?.addEventListener('mouseleave', stopMovement);
+rightBtn?.addEventListener('mouseenter', moveRight);
+rightBtn?.addEventListener('mouseleave', stopMovement);
 
 
 //Start this baby up
@@ -108,7 +109,7 @@ rightBtn.addEventListener('mouseleave', stopMovement);
 	];
 	
 	//Set Initial Featured Image
-	featured.style.backgroundImage = 'url(' + images[0] + ')';
+	// featured.style.backgroundImage = 'url(' + images[0] + ')';
 	
 	//Set Images for Gallery and Add Event Listeners
 	for (var i = 0; i < galleryItems.length; i++) {

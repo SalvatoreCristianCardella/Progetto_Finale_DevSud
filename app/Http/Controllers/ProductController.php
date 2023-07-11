@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -62,4 +63,17 @@ class ProductController extends Controller
     {
         //
     }
+
+    public function search(Request $request){ 
+        $searchkey=$request->query('chiavediricerca'); 
+        $filterproduct=[]; 
+        $products = Product::all();
+        
+        foreach($products as $product){ 
+            if(Str::of(Str::lower($product['title']))->contains(Str::lower($searchkey))||Str::of(Str::lower($product['description']))->contains(Str::lower($searchkey))){ 
+                $filterproduct[]=$product; 
+                }
+            } 
+            
+            return view('product.search', ['products' => $filterproduct, 'searchKey' => $searchkey]); }
 }
