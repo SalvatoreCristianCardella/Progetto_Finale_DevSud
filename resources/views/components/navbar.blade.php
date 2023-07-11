@@ -15,8 +15,8 @@
         </li>  
         @endauth 
         <li class="nav-item">
-        <div class="dropdown">
-          <button class="btn color-custom fs-5 dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown ">
+          <button class="btn color-custom fs-5 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorie
           </button>
           <ul class="dropdown-menu">
@@ -29,7 +29,7 @@
       </ul>
       
       <form class="d-flex" role="search" action="{{route('product.search')}}" method="GET">
-        <input class="form-control me-2 search-custom" type="search" placeholder="Cerca tra gli annunci" aria-label="Search" name='chiavediricerca'>
+        <input class="form-control me-2 search-custom" type="search" placeholder="Cerca per nome o descrizione" aria-label="Search" name='chiavediricerca'>
         <button class="button-57 me-4 d-flex justify-content-center" type="submit" role="button"><span class="text"><i class="fa-solid fa-magnifying-glass fa-bounce"></i></span><span>Cerca annunci</span></button>
         
       </form>
