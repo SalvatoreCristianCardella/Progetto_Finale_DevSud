@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg nav-custom">
+<nav class="navbar navbar-expand-lg fixed-top nav-custom">
   <div class="container-fluid mx-5">
     <a class="navbar-brand" href="#"><img src="/img/logo.png" class="img-custom" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,24 +7,27 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0 w-100 d-flex justify-content-center">
         <li class="nav-item">
-          <a class="nav-link color-custom fs-4" aria-current="page" href="{{route('product.index')}}">Tutti gli articoli</a>
+          <a class="nav-link color-custom fs-5" aria-current="page" href="{{route('product.index')}}">Tutti gli articoli</a>
         </li>
         @auth
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="{{route('product.create')}}">Crea Annuncio</a>
+          <a class="nav-link color-custom fs-5" aria-current="page" href="{{route('product.create')}}">Crea Annuncio</a>
         </li>  
-        @endauth     
+        @endauth 
+        <li class="nav-item">
+        <div class="dropdown">
+          <button class="btn color-custom fs-5 dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categorie
+          </button>
+          <ul class="dropdown-menu">
+            @foreach ($categories as $category)
+            <li ><a class="dropdown-item" href="{{route('category.show', compact('category'))}}">{{$category->name}}</a></li>
+            @endforeach
+          </ul> 
+        </div>  
+      </li>  
       </ul>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu">
-          @foreach ($categories as $category)
-          <li><a href="{{route('category.show', compact('category'))}}">{{$category->name}}</a></li>
-          @endforeach
-        </ul> 
-      </div>
+      
       <form class="d-flex" role="search">
         <input class="form-control me-2 search-custom" type="search" placeholder="Cerca tra gli annunci" aria-label="Search">
         <button class="button-57 me-4 d-flex justify-content-center" type="submit" role="button"><span class="text"><i class="fa-solid fa-magnifying-glass fa-bounce"></i></span><span>Cerca annunci</span></button>
@@ -32,10 +35,10 @@
       </form>
       {{-- Bottoni registrati e login --}}
       @if (Auth::user() != null)
-                <span class="nav-link text-dark">{{ Auth::user()->name }}</span>
+                <span class="nav-link ms-5  color-custom fs-5 text-dark">{{ Auth::user()->name }}</span>
                 <form action="{{ route('logout') }}" method="post">
                     @csrf
-                    <button type="submit" class="btn btn-sm btn-warning">LOG-OUT</button>
+                    <button type="submit" class="btn "><i class="fa-solid fa-lg fa-right-from-bracket" style="color: #284b63;"></i></button>
                 </form>
       @else
       <button class="button-48 mx-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#registrati" role="button"><span class="text">Registrati</span></button>
