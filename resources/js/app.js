@@ -1,3 +1,3 @@
 import './bootstrap';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import './carousel.js'
+import './gallery.js';
