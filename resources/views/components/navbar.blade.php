@@ -36,7 +36,8 @@
  
       {{-- Bottoni registrati e login --}}
       @if (Auth::user() != null)
-                <span class="nav-link ms-5  color-custom fs-5 text-dark">{{ Auth::user()->name }}</span>
+                @auth <a href="{{route('profile')}}" class="text-decoration-none"><span class="nav-link ms-5  color-custom fs-5 text-dark">{{ Auth::user()->name }}</span></a> @endauth
+                
                 <form action="{{ route('logout') }}" method="post">
                     @csrf
                     <button type="submit" class="btn "><i class="fa-solid fa-lg fa-right-from-bracket" style="color: #284b63;"></i></button>

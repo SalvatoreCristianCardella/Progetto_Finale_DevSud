@@ -6,8 +6,8 @@
            :product="$product"
            />               
            @empty
-            <p>non presenti annunci per questa categoria</p> 
-            <p>pubblicane uno <a href="{{route('product.create')}}">nuovo annuncio</a></p>
+            <h2>Non presenti annunci per questa categoria</h2> 
+            <h5>Pubblica un  <a class="text-decoration-none" href="{{route('product.create')}}">nuovo annuncio</a></h5>
            @endforelse
            
         </div>
