@@ -6,10 +6,11 @@
       <p class>Prezzo: € {{$product->price}}</p>
       
 
-      <p class="lead fs-6">Categoria: {{$product->category->name}}</p>
       <p class="card-footer fs-6">Pubblicato il: {{$product->created_at->format('d/m/y')}}</p>
+      <a href="{{route ('category.show',$product->category)}}" class= "button-80">{{$product->category->name}}</a>
 
       <a href="{{route('product.show', compact('product'))}}" class="button-80">DETTAGLI</a>
+
 
 
     </div>

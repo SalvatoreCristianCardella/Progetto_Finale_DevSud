@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class FrontController extends Controller
 {
     public function home() {
-        $products= Product::take(6)->orderBy('created_at')->get();
+        $products= Product::take(6)->orderBy('created_at', 'desc')->get();
         return view('welcome', compact('products'));
     }
 

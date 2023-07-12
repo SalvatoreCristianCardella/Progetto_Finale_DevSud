@@ -11,8 +11,13 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+
+
     public function index()
-    { $products= Product::paginate(4);
+    {  
+       $products = Product::orderBy('created_at', 'desc')->paginate(4);
+  
         return view('product.index', compact('products'));
     }
 
