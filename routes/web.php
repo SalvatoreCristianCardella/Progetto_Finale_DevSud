@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +23,26 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/create/product',  [ProductController::class, 'create'])->name('product.create');
     Route::get('/profile/show', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::get('/become/revisor',[RevisorController::class, 'become'])->name('revisor.become');
+
 });
 
 Route::get('/index/product',  [ProductController::class, 'index'])->name('product.index');
 Route::get('/show/product/{product}',  [ProductController::class, 'show'])->name('product.show');
 Route::get('/show/category/{category}',  [FrontController::class, 'show'])->name('category.show');
+//Rotta Search
+// Route::get('/search/product',[ProductController::class,'search'])->name('product.search');
+//Fine rotta search
 
-Route::get('/search/product',[ProductController::class,'search'])->name('product.search');
 
+
+//Rotte per il revisore
+Route::middleware(['IsRevisor'])->group(function(){
+Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.index');
+Route::patch('accept/product/{product}',[RevisorController::class,'acceptproduct'])->name('revisor.accept');
+Route::patch('reject/product/{product}',[RevisorController::class,'rejectproduct'])->name('revisor.reject');
+});
+//fine rotte revisore
+// Rendi utente revisore
+Route::get('/make/revisor/{user}',[RevisorController::class,'makeRevisor'])->name('revisor.make');
+Route::get('/search/product',[FrontController::class, 'searchProduct'])->name('product.search');

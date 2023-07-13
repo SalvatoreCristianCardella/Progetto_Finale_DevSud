@@ -6,5 +6,6 @@
        
       </ul>
       <p class="text-center text-muted">© 2023 Presto.it, DevSud Company</p>
+      <a href="{{route('revisor.become')}}"><p>Diventa revisore</p></a>
     </footer>
   </div>

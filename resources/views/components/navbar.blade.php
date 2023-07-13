@@ -12,7 +12,19 @@
         @auth
         <li class="nav-item">
           <a class="nav-link color-custom fs-5" aria-current="page" href="{{route('product.create')}}">Crea Annuncio</a>
-        </li>  
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link color-custom fs-5" aria-current="page" href="{{route('revisor.become')}}">Diventa revisore</a>
+        </li> 
+        {{-- ZONA REVISONE --}}
+        @if(Auth::user()->is_revisor)
+        <a class="nav-link btn btn-outline-success btn-sm position-relative" href="{{route('revisor.index')}}">Zona revisore
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Product::toBeRevisionedCount()}}
+          <span class="visually-hidden">unread messages</span>
+        </span>
+        </a>
+        @endif
+        {{-- FINE REVISORE --}}
         @endauth 
         <li class="nav-item">
         <div class="dropdown ">
@@ -29,7 +41,7 @@
       </ul>
       
       <form class="d-flex" role="search" action="{{route('product.search')}}" method="GET">
-        <input class="form-control me-2 search-custom" type="search" placeholder="Cerca per nome o descrizione" aria-label="Search" name='chiavediricerca'>
+        <input class="form-control me-2 search-custom" type="search" placeholder="Cerca per nome o descrizione" aria-label="Search" name='searched'>
         <button class="button-57 me-4 d-flex justify-content-center" type="submit" role="button"><span class="text"><i class="fa-solid fa-magnifying-glass fa-bounce"></i></span><span>Cerca annunci</span></button>
         
       </form>

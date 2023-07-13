@@ -16,7 +16,7 @@ class ProductController extends Controller
 
     public function index()
     {  
-       $products = Product::orderBy('created_at', 'desc')->paginate(4);
+       $products = Product::where('is_Accepted',true)->orderBy('created_at', 'desc')->paginate(4);
   
         return view('product.index', compact('products'));
     }
@@ -69,16 +69,16 @@ class ProductController extends Controller
         //
     }
 
-    public function search(Request $request){ 
-        $searchkey=$request->query('chiavediricerca'); 
-        $filterproduct=[]; 
-        $products = Product::all();
+    // public function search(Request $request){ 
+    //     $searchkey=$request->query('chiavediricerca'); 
+    //     $filterproduct=[]; 
+    //     $products = Product::all();
         
-        foreach($products as $product){ 
-            if(Str::of(Str::lower($product['title']))->contains(Str::lower($searchkey))||Str::of(Str::lower($product['description']))->contains(Str::lower($searchkey))){ 
-                $filterproduct[]=$product; 
-                }
-            } 
+    //     foreach($products as $product){ 
+    //         if(Str::of(Str::lower($product['title']))->contains(Str::lower($searchkey))||Str::of(Str::lower($product['description']))->contains(Str::lower($searchkey))){ 
+    //             $filterproduct[]=$product; 
+    //             }
+    //         } 
             
-            return view('product.search', ['products' => $filterproduct, 'searchKey' => $searchkey]); }
+    //         return view('product.search', ['products' => $filterproduct, 'searchKey' => $searchkey]); }
 }

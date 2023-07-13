@@ -1,6 +1,6 @@
 <x-layout> 
     <x-slot name="titlepage"> risultati </x-slot> 
-    <h1 class="mt-5">Risultati per : <span class="text-danger"> {{$searchKey}}</span></h1>
+    <h1 class="mt-5">Risultati per : <span class="text-danger"> {{$searched}}</span></h1>
     <div class="container" >
          <div class="row"> 
             @forelse ($products as $product)
@@ -9,9 +9,10 @@
             </div> 
             @empty 
             <div class="alert alert-info" role="alert"> 
-                <p class="lead">Nessun risultato trovato per la chiave di ricerca: {{ $searchKey }}</p> 
+                <p class="lead">Nessun risultato trovato per la chiave di ricerca: {{ $searched }}</p> 
             </div> 
             @endforelse 
+            {{$products->links()}}
         </div> 
     </div> 
 
