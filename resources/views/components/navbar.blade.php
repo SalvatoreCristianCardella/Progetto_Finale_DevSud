@@ -5,12 +5,12 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mb-2 mb-lg-0 w-100 d-flex justify-content-center">
-        <li class="nav-item">
+      <ul class="navbar-nav mb-2 mb-lg-0 w-100 d-flex justify-content-center align-items-center">
+        <li class="nav-item mx-5">
           <a class="nav-link color-custom fs-5" aria-current="page" href="{{route('product.index')}}">Tutti gli articoli</a>
         </li>
         @auth
-        <li class="nav-item">
+        <li class="nav-item mx-5">
           <a class="nav-link color-custom fs-5" aria-current="page" href="{{route('product.create')}}">Crea Annuncio</a>
         </li> 
         <li class="nav-item">
@@ -26,8 +26,8 @@
         @endif
         {{-- FINE REVISORE --}}
         @endauth 
-        <li class="nav-item">
-        <div class="dropdown ">
+        <li class="nav-item mx-5">
+        <div class="dropdown">
           <button class="btn color-custom fs-5 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorie
           </button>
@@ -48,16 +48,16 @@
  
       {{-- Bottoni registrati e login --}}
       @if (Auth::user() != null)
-                @auth <a href="{{route('profile')}}" class="text-decoration-none"><span class="nav-link ms-5  color-custom fs-5 text-dark">{{ Auth::user()->name }}</span></a> @endauth
+                @auth <a href="{{route('profile')}}" class="text-decoration-none"><span class="nav-link ms-5  color-custom fs-5">{{ Auth::user()->name }}</span></a> @endauth
                 
                 <form action="{{ route('logout') }}" method="post">
                     @csrf
                     <button type="submit" class="btn "><i class="fa-solid fa-lg fa-right-from-bracket" style="color: #284b63;"></i></button>
                 </form>
       @else
-      <button class="button-48 mx-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#registrati" role="button"><span class="text">Registrati</span></button>
+      <button class="button-48 mx-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#registrati" role="button" id="btn-open-register"><span class="text">Registrati</span></button>
 
-      <button class="button-48 mx-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#login" role="button"><span class="text">Login</span></button>
+      <button class="button-48 mx-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#login" role="button" id="btn-open-login"><span class="text">Login</span></button>
       @endif
       {{-- fine bottoni --}}
    </div>
@@ -65,21 +65,21 @@
 </nav>
 
 {{-- Offcanvas bottoni navbar --}}
-<div class="offcanvas offcanvas-end" tabindex="-1" id="registrati" aria-labelledby="registrati">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Registrati</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
+<div class="offcanvas offcanvas-end rounded" tabindex="-1" id="registrati" aria-labelledby="registrati">
+  
+   
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" id="btn-close-register"></button>
+  
   <div class="offcanvas-body">
     <x-auth.register />
 
   </div>
 </div>
-<div class="offcanvas offcanvas-end" tabindex="-1" id="login" aria-labelledby="login">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Login</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
+<div class="offcanvas offcanvas-end rounded" tabindex="-1" id="login" aria-labelledby="login">
+  
+    {{-- <h5 class="offcanvas-title" id="offcanvasRightLabel"></h5> --}}
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" id="btn-close-login"></button>
+ 
   <div class="offcanvas-body">
     <x-auth.login />
   </div>
