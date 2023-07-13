@@ -19,7 +19,7 @@
                 @endforelse
             </div>
             <div class="col-12 col-md-6">
-                <img src="/img/pc-header.png" style="width: 900px" alt="">
+                <img src="/img/pc-header.png" style="width: 600px" alt="">
             </div>
           
            

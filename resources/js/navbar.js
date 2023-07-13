@@ -12,7 +12,7 @@ window.addEventListener('scroll' , () =>{
 
         })
     } else {
-        navbar.style.backgroundColor = 'transparent';
+        navbar.style.backgroundColor = 'red';
         navLinks.forEach((navlink) => {
             navlink.style.color = 'var(--blue)'
             

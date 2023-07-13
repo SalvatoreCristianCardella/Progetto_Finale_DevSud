@@ -7,6 +7,27 @@
 .img-custom{
   width: 200px;
 }
+@media screen and (max-width: 992px) {
+  .img-custom {
+    width: 100px;
+  }
+  .navbar-collapse{
+    background-color: white;
+
+  }
+  .search-custom{
+    width: 100px;
+    height: 43px !important;
+   }
+   .button-57{
+    width: 5px;
+    height: 5px;
+   }
+   .profile-m-custom{
+    margin-left: 2px !important;
+   }
+}
+
 
 .color-custom{
   color: var(--grey);
@@ -14,8 +35,9 @@
 }
 
 .search-custom{
- width: 300px;
- border-radius: 15px ;
+ width: 150px;
+ border-radius: 15px;
+ height:58px;
 
 }
 
@@ -36,7 +58,7 @@
   margin: 0;
   opacity: 1;
   outline: 0;
-  padding: 1.5em 2.2em;
+  padding: 24px 35px;
   position: relative;
   text-align: center;
   text-decoration: none;
