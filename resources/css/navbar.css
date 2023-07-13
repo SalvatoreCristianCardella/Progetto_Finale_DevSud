@@ -5,11 +5,11 @@
   
 }
 .img-custom{
-  height: 80px;
+  width: 200px;
 }
 
 .color-custom{
-  
+  color: var(--grey);
   font-weight: 1000;
 }
 
