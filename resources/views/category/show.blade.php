@@ -1,8 +1,8 @@
 <x-layout>
 
 
-    <div class="container">
-        <div class="row">
+    <div class="container margin-show-custom">
+        <div class="row justify-content-center">
 
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center text-center">
                 @forelse ($category->products as $product)
@@ -18,8 +18,8 @@
                 
                 @endforelse
             </div>
-            <div class="col-12 col-md-6">
-                <img src="/img/pc-header.png" style="width: 600px" alt="">
+            <div class="col-12 col-md-6 d-flex flex-column align-items-start justify-content-center">
+                <img src="/img/pc-header.png" style="max-width: 370px" alt="">
             </div>
           
            

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fixed-top nav-custom">
+<nav class="navbar navbar-expand-lg fixed-top nav-custom bg">
   <div class="container-fluid mx-3">
     <a class="navbar-brand" href="{{ route('home')}}"><img src="/img/logo.png" class="img-custom" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,18 +7,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0 w-100 d-flex justify-content-center align-items-center">
         <li class="nav-item">
-          <a class="nav-link color-custom fs-5" aria-current="page" href="{{route('product.index')}}">Tutti gli articoli</a>
+          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('product.index')}}">Tutti gli articoli</a>
         </li>
         @auth
         <li class="nav-item">
-          <a class="nav-link color-custom fs-5" aria-current="page" href="{{route('product.create')}}">Crea Annuncio</a>
+          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('product.create')}}">Crea Annuncio</a>
         </li> 
         <li class="nav-item">
-          <a class="nav-link color-custom fs-5" aria-current="page" href="{{route('revisor.become')}}">Diventa revisore</a>
+          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('revisor.become')}}">Diventa revisore</a>
         </li> 
         {{-- ZONA REVISONE --}}
         @if(Auth::user()->is_revisor)
-        <a class="nav-link btn btn-outline-success btn-sm position-relative" href="{{route('revisor.index')}}">Zona revisore
+        <a class="nav-link nav-link color-custom fs-6 position-relative" href="{{route('revisor.index')}}">Zona revisore
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Product::toBeRevisionedCount()}}
           <span class="visually-hidden">unread messages</span>
         </span>
@@ -28,7 +28,7 @@
         @endauth 
         <li class="nav-item">
         <div class="dropdown">
-          <button class="btn color-custom fs-5 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn color-custom fs-6 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorie
           </button>
           <ul class="dropdown-menu">

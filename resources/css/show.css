@@ -1,4 +1,14 @@
 
+
+
+@media screen and (max-width: 992px) {
+  .margin-show-custom {
+    margin-top: 200px;
+    
+  }
+};
+
+
 /* CSS */
 .button-86 {
   all: unset;
