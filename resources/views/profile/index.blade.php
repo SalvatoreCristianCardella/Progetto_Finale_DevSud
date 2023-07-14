@@ -19,6 +19,11 @@
                      <li>
                         <a href="{{route('profile.show')}}">Visualizza i tuoi annunci</a>
                     </li> 
+                    @if(Auth::user()->is_revisor)
+                    <li>
+                        <a href="{{route('revisor.edit')}}">Visualizza gli annunci già revisionati</a>
+                    </li>
+                    @endif
                 </ul> 
             </div> 
         </div> 

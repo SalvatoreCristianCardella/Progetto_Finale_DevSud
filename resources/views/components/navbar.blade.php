@@ -13,9 +13,7 @@
         <li class="nav-item">
           <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('product.create')}}">Crea Annuncio</a>
         </li> 
-        <li class="nav-item">
-          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('revisor.become')}}">Diventa revisore</a>
-        </li> 
+        
         {{-- ZONA REVISONE --}}
         @if(Auth::user()->is_revisor)
         <a class="nav-link nav-link color-custom fs-6 position-relative" href="{{route('revisor.index')}}">Zona revisore
@@ -23,6 +21,10 @@
           <span class="visually-hidden">unread messages</span>
         </span>
         </a>
+        @else
+        <li class="nav-item">
+          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('revisor.become')}}">Diventa revisore</a>
+        </li> 
         @endif
         {{-- FINE REVISORE --}}
         @endauth 

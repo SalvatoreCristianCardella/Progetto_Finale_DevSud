@@ -6,8 +6,8 @@
     <form action="{{ route('register') }}" method="post">
       @csrf
 
-      <h3 class="fs-1 mt-5">Registrati</h3>
-      <div class="mb-3 mt-5">
+      <h3 class="fs-1 registrati-custom-title">Registrati</h3>
+      <div class="mb-3 mt-4">
           <label for="name" class="form-label">Nome</label>
           <input name="name" type="text" class="form-control @error('name') is-invalid @enderror" id="name"> 
           @error('name')

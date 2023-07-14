@@ -5,7 +5,7 @@
           <form action="{{ route('login') }}" method="post">
             @csrf
     
-              <h3 class="mb-5 fs-1">Login</h3>
+              <h3 class="mb-5 fs-1 login-custom-title">Login</h3>
             <div class="mb-3">
               <label for="email" class="form-label">Email address</label>
               <input name="email" type="email" class="form-control  @error('email') is-invalid @enderror" id="email"> 
