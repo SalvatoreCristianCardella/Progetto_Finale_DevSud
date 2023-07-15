@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container">
-        <div class="row">
-            <div class="col 12 col-md-6">
+        <div class="row d-flex justify-content-around">
+            <div class="col 12 col-md-4">
                 
                 <h2>lista annunci accettati</h2>
                 
@@ -19,7 +19,7 @@
                         @forelse ($products_accepted as $product) 
                         <tr> 
                             <td>{{ $product->title }}</td> 
-                            <td>{{ $product->description }}</td>
+                            <td>{{Str::limit($product->description , 25)}}</td>
                             <td>{{ $product->price }}</td> 
                             <td>{{ $product->category->name }}</td>
                             <td>
@@ -39,7 +39,7 @@
                 </table> 
                 
             </div>
-            <div class="col 12 col-md-6">
+            <div class="col 12 col-md-4">
                 
                 <h2>lista annunci rifiutati</h2>
                 
@@ -58,7 +58,7 @@
                         <tr> 
                             
                             <td>{{ $product->title }}</td> 
-                            <td>{{ $product->description }}</td> 
+                            <td>{{Str::limit($product->description , 25)}}</td> 
                             <td>{{ $product->price }}</td> 
                             <td>{{ $product->category->name }}</td>
                             <td>

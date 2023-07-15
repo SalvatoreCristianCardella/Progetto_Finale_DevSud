@@ -1,17 +1,19 @@
 .box-form{
     width: 600px;
     border-radius: 10px;
-    padding-top: 130px;
-    padding-bottom: 122px;
+    padding-top: 100px;
+    padding-bottom: 80px;
     margin-top: 50px !important;
+    margin-bottom:80px ;
 }
 
 @media screen and (max-width: 992px) {
     .box-form {
-      width: 400px;
-      padding-top:20px;
-      padding-bottom: 280px;
-      height: 760px;
+      width: 315px;
+      padding-top:90px;
+      padding-bottom: 450px;
+      height: 820px;
+      margin-bottom: 50px;
     }
 }
 

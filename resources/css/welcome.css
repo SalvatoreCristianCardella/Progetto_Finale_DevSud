@@ -126,7 +126,7 @@ footer{
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .waves {
     height:20px;
     min-height:40px;
@@ -139,12 +139,32 @@ footer{
   }
   .info-section{
     height: 300px;
+    margin-top: 400px; 
+
+  }
+  .img-about-us{
+    width: 400px;
+    margin-bottom: 60px;
+  }
+  .about-us{
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 1200px) {
+
+  .info-section{
+    height: 300px;
   }
   .img-about-us{
     width: 400px;
     margin-bottom: 60px; 
   }
   .about-us{
-    justify-content: center;
+    justify-content: center;   
+  }
+  .btn-about-us{
+    padding:0px;
   }
 }
