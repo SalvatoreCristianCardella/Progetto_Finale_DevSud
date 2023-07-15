@@ -1,9 +1,9 @@
 <x-layout>
 
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid">
+        <div class="row justify-content-evenly">
             @foreach ($products as $product)
-            <div class="col-12 col-md-3 marginCustom">
+            <div class="col-12 col-md-2 marginCustom">
                 <x-product.card
                 :product="$product"
                 />

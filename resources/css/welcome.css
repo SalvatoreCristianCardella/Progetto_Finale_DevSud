@@ -6,6 +6,10 @@ body {
   margin:0;
 }
 
+.height-custom{
+  height: fit-content
+}
+
 h1 {
   /* font-family: 'Lato', sans-serif; */
   font-weight:500;
@@ -88,6 +92,40 @@ p {
   }
 }
 /*Shrinking for mobile*/
+
+
+.info-section{
+  
+  margin-bottom: 50px;
+  background-color: var(--lightgray);
+  height: 200px;
+}
+
+.info-h3{
+  color: var(--grey);
+}
+
+.btn-revisor-footer{
+  color:white;
+  background-color: var(--green);
+  padding: 8px;
+}
+
+.btn-about-us{
+  color:white;
+  background-color: var(--green);
+  padding: 0px 30px 0px 30px;
+}
+
+footer{
+  background-color: var(--blue);
+  padding: 0px;
+  margin: 0px;
+}
+
+
+
+
 @media (max-width: 768px) {
   .waves {
     height:20px;
@@ -98,5 +136,15 @@ p {
   }
   h1 {
     font-size:24px;
+  }
+  .info-section{
+    height: 300px;
+  }
+  .img-about-us{
+    width: 400px;
+    margin-bottom: 60px; 
+  }
+  .about-us{
+    justify-content: center;
   }
 }

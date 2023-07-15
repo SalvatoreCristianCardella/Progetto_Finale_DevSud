@@ -25,7 +25,7 @@
     <button type="button" class="btn-close me-2" data-bs-dismiss="alert"aria-label="Close"></button>
     </div>
     @endif
-    <div class="min-vh-100 marginCustom">
+    <div class="min-vh-100 marginCustom bg-custom">
     {{$slot}}
     </div>
    <x-footer />

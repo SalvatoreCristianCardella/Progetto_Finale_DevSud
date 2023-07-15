@@ -3,15 +3,29 @@
     --green: #3c6e71;
     --white: #ffffff;
     --lightgray: #d9d9d9;
-    --blue: #284b63;
+    --blue: rgb(40, 75, 99);
 
   }
 
   *{
     font-family: 'Nunito Sans', sans-serif;
+  
+  }
+
+  .text-green{
+    color: var(--green);
+  }
+
+  .text-grey{
+    color: var(--grey);
   }
 
 
   .marginCustom{
     margin-top: 80px;
+  }
+
+  .bg-custom{
+    background: var(--blue);
+    color: white;
   }

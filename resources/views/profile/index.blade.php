@@ -8,13 +8,13 @@
                 <h1>Informazioni Generali</h1> 
                 <ul> 
                     <li>
-                        <p>Nome utente: {{Auth::user()->name}}</p>
+                        <p class="text-light">Nome utente: {{Auth::user()->name}}</p>
                     </li>
                      <li>
-                        <p>Email utente: {{Auth::user()->email}}</p>
+                        <p class="text-light">Email utente: {{Auth::user()->email}}</p>
                     </li> 
                     <li>
-                        <p>Profilo creato il: {{Auth::user()->created_at}}</p>
+                        <p class="text-light">Profilo creato il: {{Auth::user()->created_at}}</p>
                     </li>
                      <li>
                         <a href="{{route('profile.show')}}">Visualizza i tuoi annunci</a>

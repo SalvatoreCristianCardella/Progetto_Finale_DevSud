@@ -28,9 +28,7 @@
                   <select wire:model.defer="category" class="form-select">              
                     @foreach ($categories as $category)
                     <option value="{{ $category->id }}"
-                      {{-- @if ( in_array($category->id, $categoryAll) )
-                        selected
-                        @endif --}}
+                     
                         >{{ $category->name }}</option>
                         @endforeach
                       </select>
@@ -41,7 +39,7 @@
                       <input class="form-control" wire:model="price" type="price" id="price">
                       @error('price') <span class="text-danger fst-italic">{{ $message }}</span> @enderror
                     </div>
-                    <button type="submit" class="btn btn-success">Crea annuncio</button>
+                    <button type="submit" class="retro">Crea annuncio</button>
                   </form>
                 </div>
                 <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
