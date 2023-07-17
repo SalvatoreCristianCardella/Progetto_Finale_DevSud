@@ -22,6 +22,28 @@
                     </div>
                     
                     <div class="gallery-wrapper">
+                        {{-- questo serve per vedere le foto:
+                        @if ($product->images)
+                <div class="carousel-inner">
+                    @foreach ($product->images as $image)
+                    <div class="carousel-item @if ($loop->first)active @endif">
+                    <img src="{{Storage::url($image->path)}}" class="img-fluid p-3 rounded" alt="">
+                </div>      
+                    @endforeach
+                </div>
+                    @else
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://picsum.photos/id/27/1200/400" class="img-fluid p-3 rounded" alt="">
+                        </div>
+                        <div class="carousel-item active">
+                            <img src="https://picsum.photos/id/27/1200/400" class="img-fluid p-3 rounded" alt="">
+                        </div>
+                        <div class="carousel-item active">
+                            <img src="https://picsum.photos/id/27/1200/400" class="img-fluid p-3 rounded" alt="">
+                        </div>
+                    </div>
+                @endif  --}}
                         <div class="gallery">
                                 <div class="item-wrapper">
                                     <figure class="gallery-item image-holder r-3-2 active transition"></figure>
