@@ -5,6 +5,7 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Envelope;
@@ -18,9 +19,13 @@ class BecomeRevisor extends Mailable
      * Create a new message instance.
      */
     public $user;
-    public function __construct(User $user)
+    public $presentation;
+    public $Cv;
+    public function __construct(User $user, $_presentation,$_Cv)
     {
         $this->user =$user;
+        $this->presentation =$_presentation;
+        $this->Cv=$_Cv;
     }
     public function build(){
         return $this->from('presto.it@noreply.com')->view('mail.become_revisor');
@@ -42,6 +47,7 @@ class BecomeRevisor extends Mailable
     public function content(): Content
     {
         return new Content(
+           
             view: 'mail.become_revisor',
         );
     }
@@ -53,6 +59,8 @@ class BecomeRevisor extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        return [
+            Attachment::fromStorage($this->Cv)->as($this->user->name . ' curriculum')
+        ];
     }
 }
