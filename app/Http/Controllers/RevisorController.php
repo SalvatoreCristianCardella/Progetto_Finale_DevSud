@@ -32,5 +32,10 @@ class RevisorController extends Controller
             Artisan::call('presto:makeUserRevisor',["email"=>$user->email]);
             return redirect ('/')->with('message','L\'utente è diventato revisore');
          }
+         public function edit(){
+            $products_accepted=Product::all()->where('is_accepted');
+            $products_rejected=Product::all()->where('is_accepted',false);
+            return view ('revisor.edit', compact('products_accepted','products_rejected'));
+            }
 
 }

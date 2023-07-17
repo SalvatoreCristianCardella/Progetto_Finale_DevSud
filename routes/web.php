@@ -41,8 +41,10 @@ Route::middleware(['IsRevisor'])->group(function(){
 Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.index');
 Route::patch('accept/product/{product}',[RevisorController::class,'acceptproduct'])->name('revisor.accept');
 Route::patch('reject/product/{product}',[RevisorController::class,'rejectproduct'])->name('revisor.reject');
+Route::get('/revisor/edit',[RevisorController::class,'edit'])->name('revisor.edit');
 });
-//fine rotte revisore
+
 // Rendi utente revisore
 Route::get('/make/revisor/{user}',[RevisorController::class,'makeRevisor'])->name('revisor.make');
 Route::get('/search/product',[FrontController::class, 'searchProduct'])->name('product.search');
+//fine rotte revisore

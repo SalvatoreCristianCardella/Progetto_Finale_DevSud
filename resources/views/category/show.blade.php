@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
 
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center text-center">
-                @forelse ($category->products as $product)
+                @forelse ($productscategory as $product)
                 <x-product.card
                 :product="$product"
                 />               
