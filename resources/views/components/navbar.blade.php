@@ -23,7 +23,7 @@
         </a>
         @else
         <li class="nav-item">
-          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('revisor.become')}}">Diventa revisore</a>
+          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('revisor.view')}}">Diventa revisore</a>
         </li> 
         @endif
         {{-- FINE REVISORE --}}

@@ -24,6 +24,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/profile/show', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::get('/become/revisor',[RevisorController::class, 'become'])->name('revisor.become');
+    Route::get('/view/revisor',[RevisorController::class, 'view'])->name('revisor.view');
     Route::get('/make/revisor/{user}',[RevisorController::class,'makeRevisor'])->name('revisor.make');
 
 });

@@ -39,4 +39,8 @@ class RevisorController extends Controller
             return view ('revisor.edit', compact('products_accepted','products_rejected'));
             }
 
+            public function view(){
+                return view('revisor.view');
+            }
+
 }
