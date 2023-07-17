@@ -19,7 +19,7 @@
                         <tr> 
                             <th scope="row">{{ $product->id }}</th> 
                             <td>{{ $product->title }}</td> 
-                            <td>{{ $product->description }}</td> 
+                            <td>{{Str::limit($product->description , 25)}}</td> 
                             <td>{{ $product->price }}</td> 
                             <td>{{ $product->category->name }}</td> 
                         </tr> 

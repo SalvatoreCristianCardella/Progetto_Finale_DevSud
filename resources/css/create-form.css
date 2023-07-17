@@ -1,16 +1,36 @@
 .box-form{
     width: 600px;
     border-radius: 10px;
-    padding-top: 200px;
-    padding-bottom: 150px;
-    margin-top: 30px;
+    /* padding-top: 100px; */
+    padding-bottom: 80px;
+    margin-top: 50px !important;
+    margin-bottom:80px ;
+    height: 780px;
 }
 
 @media screen and (max-width: 992px) {
     .box-form {
-      width: 400px;
-      padding-top:120px;
-      padding-bottom: 120px;
-      height: 750px;
+      width: 315px;
+      padding-top:90px;
+      padding-bottom: 450px;
+      height: 780px;
+      margin-bottom: 50px;
     }
+}
+
+
+
+
+.retro{
+  background-color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: solid 0.125rem var(--grey);
+  box-shadow: 0.25rem 0.25rem var(--grey) ;
+  transition: transform 50ms , box-shadow 50ms;
+}
+
+.retro:active{
+  transform: translate(0.125rem , 0.125rem);
+  box-shadow: 0.125rem 0.125rem var(--grey);
 }

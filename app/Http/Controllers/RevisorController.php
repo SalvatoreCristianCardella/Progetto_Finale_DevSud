@@ -38,4 +38,14 @@ class RevisorController extends Controller
             return view ('revisor.edit', compact('products_accepted','products_rejected'));
             }
 
+         public function edit(){
+            $products_accepted=Product::all()->where('is_accepted');
+            $products_rejected=Product::all()->where('is_accepted',false);
+            return view ('revisor.edit', compact('products_accepted','products_rejected'));
+            }
+
+            public function view(){
+                return view('revisor.view');
+            }
+
 }

@@ -4,7 +4,7 @@
     <div class="container" >
          <div class="row"> 
             @forelse ($products as $product)
-             <div class="col-12 col-md-3"> 
+             <div class="col-12 col-md-3 mx-5"> 
                 <x-product.card :product="$product" /> 
             </div> 
             @empty 

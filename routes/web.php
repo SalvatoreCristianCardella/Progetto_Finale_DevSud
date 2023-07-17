@@ -24,15 +24,15 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/profile/show', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::get('/become/revisor',[RevisorController::class, 'become'])->name('revisor.become');
+    Route::get('/view/revisor',[RevisorController::class, 'view'])->name('revisor.view');
+    Route::get('/make/revisor/{user}',[RevisorController::class,'makeRevisor'])->name('revisor.make');
 
 });
 
 Route::get('/index/product',  [ProductController::class, 'index'])->name('product.index');
 Route::get('/show/product/{product}',  [ProductController::class, 'show'])->name('product.show');
 Route::get('/show/category/{category}',  [FrontController::class, 'show'])->name('category.show');
-//Rotta Search
-// Route::get('/search/product',[ProductController::class,'search'])->name('product.search');
-//Fine rotta search
+
 
 
 
@@ -42,9 +42,8 @@ Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.in
 Route::patch('accept/product/{product}',[RevisorController::class,'acceptproduct'])->name('revisor.accept');
 Route::patch('reject/product/{product}',[RevisorController::class,'rejectproduct'])->name('revisor.reject');
 Route::get('/revisor/edit',[RevisorController::class,'edit'])->name('revisor.edit');
-});
 
+});
 // Rendi utente revisore
-Route::get('/make/revisor/{user}',[RevisorController::class,'makeRevisor'])->name('revisor.make');
 Route::get('/search/product',[FrontController::class, 'searchProduct'])->name('product.search');
 //fine rotte revisore

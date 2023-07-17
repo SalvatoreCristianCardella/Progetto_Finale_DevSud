@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-lg fixed-top nav-custom bg">
-  <div class="container-fluid mx-3">
+<nav class="navbar navbar-expand-lg fixed-top nav-custom">
+  <div class="container-fluid">
     <a class="navbar-brand" href="{{ route('home')}}"><img src="/img/logo.png" class="img-custom" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse rounded" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0 w-100 d-flex justify-content-center align-items-center">
         <li class="nav-item">
           <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('product.index')}}">Tutti gli articoli</a>
@@ -23,7 +23,7 @@
         </a>
         @else
         <li class="nav-item">
-          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('revisor.become')}}">Diventa revisore</a>
+          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('revisor.view')}}">Diventa revisore</a>
         </li> 
         @endif
         {{-- FINE REVISORE --}}

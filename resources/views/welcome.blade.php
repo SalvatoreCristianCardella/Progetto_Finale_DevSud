@@ -18,9 +18,9 @@
         </defs>
         <g class="parallax">
             <use xlink:href="#gentle-wave" x="48" y="0" fill="#3c6e71" />
-            <use xlink:href="#gentle-wave" x="48" y="5" fill="#d9d9d9" />
-            <use xlink:href="#gentle-wave" x="48" y="7" fill="#284b63" />
             <use xlink:href="#gentle-wave" x="48" y="3" fill="#ffffff" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#284b63" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="#d9d9d9" />
         </g>
         </svg>
         </div>
@@ -29,13 +29,56 @@
         </div>
         <!--Header ends-->
         
-      
+      {{-- Sezione info --}}
+       
+            <div class="container-fluid info-section d-flex align-items-center justify-content-evenly">
+    
+                <div class="row justify-content-evenly w-100">
+                    <div class="col-12 col-md-4 d-flex justify-content-center">
+                        <div class="list-box d-flex align-items-center">
+                            <div class="list-icon ">
+                                <i data-aos="fade-right" class="fa-solid fa-truck-fast fa-2xl fs-1 me-2" style="color: #284b63;"></i>
+                            </div>
+                            <div class="">
+                                <h3 class="info-h3">Spedizione gratuita</h3>
+                                <p>Per ordini superiori a €50</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-12 col-md-4 d-flex justify-content-center">
+                        <div class="list-box d-flex align-items-center">
+                            <div class="list-icon">
+                                <i class="fa-solid fa-phone-volume fa-shake fa-2xl fs-1 me-2" style="color: #284b63;"></i>
+                            </div>
+                            <div class="">
+                                <h3 class="info-h3">Supporto 24/7</h3>
+                                <p>Sarai supportato tutti i giorni</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-12 col-md-4 d-flex justify-content-center">
+                        <div class="list-box d-flex justify-content-start align-items-center">
+                            <div class="list-icon">
+                                <i class="fa-solid fa-rotate fa-spin fa-2xl fs-1 me-2" style="color: #284b63;"></i>
+                            </div>
+                            <div class="">
+                                <h3 class="info-h3">Resi</h3>
+                                <p>Reso gratuito entro 3 giorni</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
 
-    <div class="container">
-        <h2 class="text-center">I nuovi annunci:</h2>
-        <div class="row">
+{{-- Sezione i nuovi annunci --}}
+
+    <div class="container height-custom">
+        <div class="row justify-content-evenly">
+            <h2 class="text-center">I nuovi annunci:</h2>
             @foreach ($products as $product)
-            <div class="col-12 col-md-3 marginCustom">
+            <div class="col-10 col-md-4 d-flex justify-content-around">
                 <x-product.card
                 :product="$product"
                 />
@@ -43,6 +86,23 @@
                 
             @endforeach
         </div>
+    </div> 
+
+    {{-- Sezione chi siamo --}}
+
+    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
+        <div class="row about-us">
+            <div class="col-10 col-md-6 p-0 d-flex justify-content-center align-items-center">
+                <img src="/img/aboutus.png" class="img-about-us" alt="" data-aos="fade-right" data-aos-duration="3000">
+            </div>
+            <div class="col-10 col-md-4 p-0 d-flex flex-column justify-content-center align-items-start">
+                <h1 class="fw-bolder" data-aos="fade-left" data-aos-duration="3000">We are<div class="d-inline btn-about-us rounded">PRESTO.IT</div></h1>
+                <p class="text-white fw-bold fs-5">Presto.it è la più grande e famosa piattaforma di compravendita online italiana, vitale e dinamica.
+                Su Presto.it è possibile trovare oggetti delle migliori marche italiane ed internazionali, a prezzi vantaggiosi.
+                Siamo rivenditori di tutti i brand presenti nel nostro catalogo e garantiamo la qualità e la serietà del servizio.</p>
+            </div>
+        </div>
+
     </div>
     
 </x-layout>
