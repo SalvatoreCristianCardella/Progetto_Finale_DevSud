@@ -23,7 +23,7 @@
         </a>
         @else
         <li class="nav-item">
-          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('revisor.become')}}">Diventa revisore</a>
+          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('revisor.view')}}">Diventa revisore</a>
         </li> 
         @endif
         {{-- FINE REVISORE --}}
@@ -50,7 +50,7 @@
       {{-- Bottoni registrati e login --}}
     <div class="d-flex justify-content-evenly align-items-center">
       @if (Auth::user() != null)
-                @auth <a href="{{route('profile')}}" class="text-decoration-none"><span class="nav-link ms-5 profile-m-custom color-custom fs-5">{{ Auth::user()->name }}</span></a> @endauth
+                @auth <a href="{{route('profile')}}" class="text-decoration-none"><span class="nav-link ms-5 text-capitalize profile-m-custom color-custom fs-5">{{ Auth::user()->name }}</span></a> @endauth
                 
                 <form action="{{ route('logout') }}" method="post">
                     @csrf
@@ -70,7 +70,7 @@
 </nav>
 
 {{-- Offcanvas bottoni navbar --}}
-<div class="offcanvas offcanvas-end rounded" tabindex="-1" id="registrati" aria-labelledby="registrati">
+<div class="offcanvas offcanvas-end rounded " data-bs-backdrop="static" tabindex="-1" id="registrati" aria-labelledby="registrati">
   
    
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" id="btn-close-register"></button>
@@ -80,7 +80,7 @@
 
   </div>
 </div>
-<div class="offcanvas offcanvas-end rounded" tabindex="-1" id="login" aria-labelledby="login">
+<div class="offcanvas offcanvas-end rounded" data-bs-backdrop="static" tabindex="-1" id="login" aria-labelledby="login">
   
     {{-- <h5 class="offcanvas-title" id="offcanvasRightLabel"></h5> --}}
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" id="btn-close-login"></button>

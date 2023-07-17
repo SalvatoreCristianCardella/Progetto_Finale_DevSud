@@ -17,12 +17,30 @@
                   <textarea  class="form-control" wire:model="description" cols="30" rows="9" type="description" id="description"></textarea>
                   @error('description') <span class="text-danger fst-italic">{{ $message }}</span> @enderror
                 </div>
-                {{-- IMMAGINE --}}
-                {{-- <div class="mb-3">
+                
+                 <div class="mb-3">
                   <label for="img" class="form-label fs-5">img</label>
-                  <input class="form-control" type="file" id="img">
-                  @error('title') <span class="text-danger fst-italic">{{ $message }}</span> @enderror
-                </div> --}}
+                  <input class="form-control shadow @error('temporary_images.*')is-invalid @enderror" wire:model="temporary_images" multiple type="file" placeholder="img" id="img">
+                  @error('temporary_images.*')
+                    <p class="text-danger mt-2">{{$message}}</p>  
+                  @enderror
+                  @if (!empty($images))
+                  <div class="row">
+                    <div class="col-12">
+                      <p>foto</p>
+                      <div class="row border border-4 border-info rounded shadow py-4 ">
+                        @foreach ($images as $key=>$image)
+                        <div class="col my-3">
+                          <div class="img-preview mx-auto shadow rounded" style="background-image: url({{$image->temporaryUrl()}})"></div>
+                          <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
+                        </div>
+                        @endforeach
+                      </div>
+                    </div>
+                  </div>
+                    
+                  @endif
+                </div>
                 <div class="mb-3">
                   <label for="category" class="form-label fs-5">Categorie</label>
                   <select wire:model.defer="category" class="form-select">              

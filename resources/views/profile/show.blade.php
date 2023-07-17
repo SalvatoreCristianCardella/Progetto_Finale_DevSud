@@ -2,16 +2,16 @@
 <x-layout>
      <div class="container"> 
         <div class="row"> 
-            <div class="col-12"> 
-                <h1> {{Auth::user()->name}}</h1>
-                 <table class="table table-striped"> 
+            <div class="col-12 mt-5" style="overflow-x:auto"> 
+                <h2><span class="text-capitalize">{{Auth::user()->name}}</span>, questi sono gli annunci che hai pubblicato:</h2>
+                 <table class="table table-striped mt-5"> 
                     <thead> 
                         <tr> 
-                            <th scope="col">#</th> 
-                            <th scope="col">Title</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">price</th> 
-                            <th scope="col">category</th> 
+                            <th scope="col">N°</th> 
+                            <th scope="col">Titolo</th>
+                            <th scope="col">Descrizione</th>
+                            <th scope="col">Prezzo</th> 
+                            <th scope="col">Categoria</th> 
                         </tr> 
                     </thead> 
                     <tbody> 

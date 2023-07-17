@@ -3,11 +3,49 @@
     <div class="header">
 
         <!--Content before waves-->
-        <div class="inner-header flex flex-column">
-       
-        <h1  data-aos="zoom-out"  data-aos-duration="800" class="mb-3">Presto.it</h1>
-        <h3  data-aos="zoom-out"  data-aos-duration="3000">Compra o Vendi tutto ciò che vuoi...</h3>
+        <div class="inner-header flex">
+
+           
+            @if (Auth::user() != null)
+
+                <div class="d-flex flex-column">
+        
+                    <h1  data-aos="zoom-out"  data-aos-duration="800" class="mb-3">Presto.it</h1>
+                    <h3  data-aos="zoom-out"  data-aos-duration="3000">Compra o Vendi tutto ciò che vuoi...</h3>
+                </div>
+            @auth  
+            
+            @endauth  
+            @else
+            <div class="container">
+            
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-5 d-flex flex-column">
+                        <h1  data-aos="zoom-out"  data-aos-duration="800" class="mb-3">Presto.it</h1>
+                        <h4  data-aos="zoom-out"  data-aos-duration="3000">Compra o Vendi tutto ciò che vuoi...</h4>
+                    </div>
+
+                    <div class="col-12 col-md-7">
+                        <p class="fs-2 text-white " data-aos="fade-left" >Vuoi vendere qualcosa che non usi più?</p>
+                        <p class=" fs-3 text-white fw-bold" data-aos="fade-right" >Crea un profilo, carica e vendi ciò che vuoi... 
+                        <p class=" fs-5 text-white" data-aos="fade-left">Più di un milione di persone hanno scelto <span class="fs-2 fw-bold">Presto.it</span></p> 
+                        <p class=" fs-3 fw-bold text-white " data-aos="fade-right"> REGISTRATI e carica il tuo primo annuncio.</p>  
+
+                        <p class="text-white mt-5 fs-5" data-aos="zoom-out-down"><a data-bs-toggle="offcanvas" data-bs-target="#registrati" role="button" id="btn-open-register" class="d-inline text-decoration-none btn-revisor-footer rounded">Registrati</a>
+                    </div>
+            
+                
+                </div>
+            </div>
+
+
+            @endif
+            
+
+        
+            
         </div>
+
         
         <!--Waves Container-->
         <div>
