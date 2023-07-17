@@ -3,16 +3,16 @@
         <div class="row d-flex justify-content-around">
             <div class="col 12 col-md-4">
                 
-                <h2>lista annunci accettati</h2>
+                <h2>Lista annunci accettati</h2>
                 
-                <table class="table table-striped"> 
+                <table class="table table-striped " style="overflow-x:auto"> 
                     <thead> 
                         <tr> 
-                            <th scope="col">Title</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">price</th> 
-                            <th scope="col">category</th> 
-                            <th scope="col">reject</th> 
+                            <th scope="col">Titolo</th>
+                            <th scope="col">Descrizione</th>
+                            <th scope="col">Prezzo</th> 
+                            <th scope="col">Categoria</th> 
+                            <th scope="col">Rifiuta</th> 
                         </tr> 
                     </thead> 
                     <tbody> 
@@ -41,16 +41,16 @@
             </div>
             <div class="col 12 col-md-4">
                 
-                <h2>lista annunci rifiutati</h2>
+                <h2>Lista annunci rifiutati</h2>
                 
-                <table class="table table-striped"> 
+                <table class="table table-striped" style="overflow-x:auto"> 
                     <thead> 
                         <tr> 
-                            <th scope="col">Title</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">price</th> 
-                            <th scope="col">category</th> 
-                            <th scope="col">accept</th> 
+                            <th scope="col">Titolo</th>
+                            <th scope="col">Descrizione</th>
+                            <th scope="col">Prezzo</th> 
+                            <th scope="col">Categoria</th> 
+                            <th scope="col">Accetta</th> 
                         </tr> 
                     </thead> 
                     <tbody> 

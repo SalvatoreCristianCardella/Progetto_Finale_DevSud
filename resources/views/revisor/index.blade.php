@@ -18,7 +18,7 @@
         <form action="{{route('revisor.reject',['product'=>$product_to_check])}}" method="POST">
             @csrf
             @method('PATCH')
-            <button type="submit" class="btn btn-success shadow">Rifiuta</button>
+            <button type="submit" class="btn btn-warning shadow">Rifiuta</button>
         </form>
     </div>
 </div>

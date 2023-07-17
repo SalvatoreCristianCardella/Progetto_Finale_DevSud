@@ -7,9 +7,13 @@ let offcanvasLogin = document.querySelector('#login');
 let btnOpenLogin= document.querySelector('#btn-open-login');
 let btnCloseLogin = document.querySelector('#btn-close-login');
 
+let errorName = document.querySelectorAll('.error-name');
+let errorLogin = document.querySelectorAll('.error-login');
 
 
-if(localStorage.getItem('offcanvasShow') === 'true'){
+
+// console.log(errorName);
+if(localStorage.getItem('offcanvasShow') === 'true' && errorName.length>0){
     offcanvas.classList.add('show');
 }
 
@@ -27,7 +31,7 @@ btnCloseRegister.addEventListener('click' , ()=> {
 
 
 
-if(localStorage.getItem('offcanvasShowLogin') === 'true'){
+if(localStorage.getItem('offcanvasShowLogin') === 'true' && errorLogin.length>0){
     offcanvasLogin.classList.add('show');
 }
 
