@@ -6,10 +6,10 @@
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
                 <h3>Dettaglio prodotto: <br>
                   {{$product->title}} </h3>
-                <p class="text-break">{{$product->description}}</p>
-                <p>Prezzo: € {{$product->price}}</p>
-                <p class="lead fs-6">Categoria: {{$product->category->name}}</p>
-                <p>Pubblicato il: {{$product->created_at->format('d/m/y')}}</p>
+                <p class="text-break text-white">{{$product->description}}</p>
+                <p class="text-white">Prezzo: € {{$product->price}}</p>
+                <p class="lead fs-6 text-white">Categoria: {{$product->category->name}}</p>
+                <p class="text-white">Pubblicato il: {{$product->created_at->format('d/m/y')}}</p>
 
 
             </div>
