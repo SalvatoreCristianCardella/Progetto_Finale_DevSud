@@ -6,6 +6,9 @@ let btnCloseRegister = document.querySelector('#btn-close-register');
 let offcanvasLogin = document.querySelector('#login');
 let btnOpenLogin= document.querySelector('#btn-open-login');
 let btnCloseLogin = document.querySelector('#btn-close-login');
+let btnLogin =document.querySelector('#btn-login');
+let btnRegister =document.querySelector('#btn-register')
+
 
 
 
@@ -23,6 +26,12 @@ btnCloseRegister.addEventListener('click' , ()=> {
     offcanvas.classList.remove('show');
     localStorage.removeItem('offcanvasShow')
 })
+
+btnRegister.addEventListener('click' , ()=>{
+    localStorage.removeItem('offcanvasShow')
+
+}
+)
 
 
 
@@ -42,4 +51,9 @@ btnCloseLogin.addEventListener('click' , ()=> {
     localStorage.removeItem('offcanvasShowLogin')
 })
 
+btnLogin.addEventListener('click' , ()=>{
+    localStorage.removeItem('offcanvasShowLogin')
+
+}
+)
 AOS.init();

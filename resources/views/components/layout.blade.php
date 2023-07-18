@@ -20,12 +20,16 @@
 <body>
     <x-navbar />
     <div class="min-vh-100 marginCustom bg-custom">
+       
         @if (session('message'))
-        <div class="alert alert-success marginCustom alert-dismissible fade show"role="alert">
-        {{ session('message') }}
-        <button type="button" class="btn-close me-2" data-bs-dismiss="alert"aria-label="Close"></button>
-        </div>
+        <div class="alert alert-warning alert-dismissible fade show z-5" role="alert">
+            <strong>{{ session('message') }}</strong> 
+        
+         
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
         @endif
+
     {{$slot}}
     </div>
    <x-footer />

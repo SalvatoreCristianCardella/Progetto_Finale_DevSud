@@ -5,6 +5,7 @@
 }
 .img-custom{
   width: 200px;
+  height: 80px;
 }
 @media screen and (max-width: 992px) {
   .img-custom {
