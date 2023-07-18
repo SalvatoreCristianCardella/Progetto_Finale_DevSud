@@ -33,7 +33,9 @@ Route::get('/index/product',  [ProductController::class, 'index'])->name('produc
 Route::get('/show/product/{product}',  [ProductController::class, 'show'])->name('product.show');
 Route::get('/show/category/{category}',  [FrontController::class, 'show'])->name('category.show');
 
+// Rotte Language
 
+Route::post('/lingua/{lang}',[FrontController::class, 'setLanguage'])->name('set_language_locale');
 
 
 //Rotte per il revisore

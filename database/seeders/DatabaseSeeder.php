@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
 
-        $categories = ['Auto','Nautica','Elettronica','Sport','Hobby','Moto e Scooter','Videogiochi','Informatica','Immobili','Arredamento','Altro'];
+        $categories = ["Auto",'Nautica','Elettronica','Sport','Hobby','Moto e Scooter','Videogiochi','Informatica','Immobili','Arredamento','Altro'];
         foreach($categories as $category){
             Category::create([
                 'name'=>$category,

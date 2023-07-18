@@ -7,7 +7,7 @@
     
               <h3 class="mb-5 fs-1 login-custom-title">Login</h3>
             <div class="mb-3">
-              <label for="email" class="form-label">Email address</label>
+              <label for="email" class="form-label">Email</label>
               <input name="email" type="email" class="form-control  @error('email') is-invalid @enderror" id="email"> 
               @error('email')
               <div class="alert text-danger error-login">{{ $message }}</div>

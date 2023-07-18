@@ -3,16 +3,16 @@
         <div class="row d-flex justify-content-around">
             <div class="col 12 col-md-4">
                 
-                <h2>Lista annunci accettati</h2>
+                <h2>{{__('ui.editprofile1')}}</h2>
                 
                 <table class="table table-striped " style="overflow-x:auto"> 
                     <thead> 
                         <tr> 
-                            <th scope="col">Titolo</th>
-                            <th scope="col">Descrizione</th>
-                            <th scope="col">Prezzo</th> 
-                            <th scope="col">Categoria</th> 
-                            <th scope="col">Rifiuta</th> 
+                            <th scope="col">{{__('ui.showprofile2')}}</th>
+                            <th scope="col">{{__('ui.showprofile3')}}</th>
+                            <th scope="col">{{__('ui.showprofile4')}}</th> 
+                            <th scope="col">{{__('ui.showprofile5')}}</th> 
+                            <th scope="col">{{__('ui.editprofile2')}}</th> 
                         </tr> 
                     </thead> 
                     <tbody> 
@@ -46,11 +46,11 @@
                 <table class="table table-striped" style="overflow-x:auto"> 
                     <thead> 
                         <tr> 
-                            <th scope="col">Titolo</th>
-                            <th scope="col">Descrizione</th>
-                            <th scope="col">Prezzo</th> 
-                            <th scope="col">Categoria</th> 
-                            <th scope="col">Accetta</th> 
+                            <th scope="col">{{__('ui.showprofile2')}}</th>
+                            <th scope="col">{{__('ui.showprofile3')}}</th>
+                            <th scope="col">{{__('ui.showprofile4')}}</th> 
+                            <th scope="col">{{__('ui.showprofile5')}}</th> 
+                            <th scope="col">{{__('ui.editprofile4')}}</th> 
                         </tr> 
                     </thead> 
                     <tbody> 
@@ -65,7 +65,7 @@
                                 <form action="{{route('revisor.accept',['product'=>$product])}}" method="POST">
                                     @csrf
                                     @method('PATCH')
-                                    <button type="submit" class="btn btn-success shadow">Accetta</button>
+                                    <button type="submit" class="btn btn-success shadow">{{__('ui.editprofile4')}}</button>
                                 </form>
                                 
                             </td>

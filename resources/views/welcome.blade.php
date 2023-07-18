@@ -8,11 +8,19 @@
            
             @if (Auth::user() != null)
 
-                <div class="d-flex flex-column">
-        
-                    <h1  data-aos="zoom-out"  data-aos-duration="800" class="mb-3">Presto.it</h1>
-                    <h3  data-aos="zoom-out"  data-aos-duration="3000">Compra o Vendi tutto ciò che vuoi...</h3>
+                <div class="flex">
+                    <a href="{{route('product.index')}}"><p class="circle1" data-aos="flip-right" data-aos-delay="100"><i class="fa-solid fa-magnifying-glass fa-bounce fa-2xl mt-5"></i></p></a>
+                    <a href="{{route('product.create')}}"><p class="circle2" data-aos="flip-right" data-aos-delay="200"><i class="fa-solid fa-bag-shopping fa-fade fa-2xl mt-5"></i></p></a>
+                    <a href="{{ route('home')}}"><p class="circle3" data-aos="flip-right" data-aos-delay="300"><i class="fa-solid fa-cart-shopping fa-beat fa-2xl mt-5" style="color: #ffffff;"></i></p></a>
                 </div>
+                {{-- {{route('product.search')}} --}}
+                {{-- {{route('product.index')}} --}}
+                
+                <div class="d-flex flex-column">
+                    <h1 data-aos="zoom-out"  data-aos-duration="800" class="mb-3">Presto.it</h1>
+                    <h3 data-aos="zoom-out"  data-aos-duration="3000">{{__('ui.pHeader')}}</h3>
+                </div>
+                    
             @auth  
             
             @endauth  
@@ -22,16 +30,16 @@
                 <div class="row align-items-center">
                     <div class="col-12 col-md-5 d-flex flex-column">
                         <h1  data-aos="zoom-out"  data-aos-duration="800" class="mb-3">Presto.it</h1>
-                        <h4  data-aos="zoom-out"  data-aos-duration="3000">Compra o Vendi tutto ciò che vuoi...</h4>
+                        <h4  data-aos="zoom-out"  data-aos-duration="3000">{{__('ui.pHeader')}}</h4>
                     </div>
 
                     <div class="col-12 col-md-7">
-                        <p class="fs-2 text-white " data-aos="fade-left" >Vuoi vendere qualcosa che non usi più?</p>
-                        <p class=" fs-3 text-white fw-bold" data-aos="fade-right" >Crea un profilo, carica e vendi ciò che vuoi... 
-                        <p class=" fs-5 text-white" data-aos="fade-left">Più di un milione di persone hanno scelto <span class="fs-2 fw-bold">Presto.it</span></p> 
-                        <p class=" fs-3 fw-bold text-white " data-aos="fade-right"> REGISTRATI e carica il tuo primo annuncio.</p>  
+                        <p class="fs-2 text-white " data-aos="fade-left" >{{__('ui.pHeader2')}}</p>
+                        <p class=" fs-3 text-white fw-bold" data-aos="fade-right" >{{__('ui.pHeader3')}}
+                        <p class=" fs-5 text-white" data-aos="fade-left">{{__('ui.pHeader4')}} <span class="fs-2 fw-bold">Presto.it</span></p> 
+                        <p class=" fs-3 fw-bold text-white " data-aos="fade-right"> {{__('ui.pHeader5')}}</p>  
 
-                        <p class="text-white mt-5 fs-5" data-aos="zoom-out-down"><a data-bs-toggle="offcanvas" data-bs-target="#registrati" role="button" id="btn-open-register" class="d-inline text-decoration-none btn-revisor-footer rounded">Registrati</a>
+                        <p class="text-white mt-5 fs-5" data-aos="zoom-out-down"><a data-bs-toggle="offcanvas" data-bs-target="#registrati" role="button" id="btn-open-register" class="d-inline text-decoration-none btn-revisor-footer rounded">{{__('ui.btn-register')}}</a>
                     </div>
             
                 
@@ -78,8 +86,8 @@
                                 <i data-aos="fade-right" class="fa-solid fa-truck-fast fa-2xl fs-1 me-2" style="color: #284b63;"></i>
                             </div>
                             <div class="">
-                                <h3 class="info-h3">Spedizione gratuita</h3>
-                                <p>Per ordini superiori a €50</p>
+                                <h3 class="info-h3">{{__('ui.ship1')}}</h3>
+                                <p>{{__('ui.ship2')}}</p>
                             </div>
                         </div>
                     </div>
@@ -89,8 +97,8 @@
                                 <i class="fa-solid fa-phone-volume fa-shake fa-2xl fs-1 me-2" style="color: #284b63;"></i>
                             </div>
                             <div class="">
-                                <h3 class="info-h3">Supporto 24/7</h3>
-                                <p>Sarai supportato tutti i giorni</p>
+                                <h3 class="info-h3">{{__('ui.ship3')}}</h3>
+                                <p>{{__('ui.ship4')}}</p>
                             </div>
                         </div>
                     </div>
@@ -100,8 +108,8 @@
                                 <i class="fa-solid fa-rotate fa-spin fa-2xl fs-1 me-2" style="color: #284b63;"></i>
                             </div>
                             <div class="">
-                                <h3 class="info-h3">Resi</h3>
-                                <p>Reso gratuito entro 3 giorni</p>
+                                <h3 class="info-h3">{{__('ui.ship5')}}</h3>
+                                <p>{{__('ui.ship6')}}</p>
                             </div>
                         </div>
                     </div>
@@ -114,7 +122,7 @@
 
     <div class="container height-custom">
         <div class="row justify-content-evenly">
-            <h2 class="text-center">I nuovi annunci:</h2>
+            <h2 class="text-center">{{__('ui.newAnnounce')}}</h2>
             @foreach ($products as $product)
             <div class="col-10 col-md-4 d-flex justify-content-around">
                 <x-product.card
@@ -135,9 +143,7 @@
             </div>
             <div class="col-10 col-md-4 p-0 d-flex flex-column justify-content-center align-items-start">
                 <h1 class="fw-bolder" data-aos="fade-left" data-aos-duration="3000">We are<div class="d-inline btn-about-us rounded">PRESTO.IT</div></h1>
-                <p class="text-white fw-bold fs-5">Presto.it è la più grande e famosa piattaforma di compravendita online italiana, vitale e dinamica.
-                Su Presto.it è possibile trovare oggetti delle migliori marche italiane ed internazionali, a prezzi vantaggiosi.
-                Siamo rivenditori di tutti i brand presenti nel nostro catalogo e garantiamo la qualità e la serietà del servizio.</p>
+                <p class="text-white fw-bold fs-5">{{__('ui.aboutUs')}}</p>
             </div>
         </div>
 
