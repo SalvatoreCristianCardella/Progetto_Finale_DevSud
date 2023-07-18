@@ -2,11 +2,14 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use App\Models\Category;
+use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+
 
 class ProductForm extends Component
 {
@@ -64,8 +67,13 @@ class ProductForm extends Component
         ]);
         if(count($this->images)){
             foreach($this->images as $image){
-                $this->product->images()->create(['path'=>$image->store('images','public')]);
+                // $this->product->images()->create(['path'=>$image->store('images','public')]);
+                $newFileName = "products/{$this->product->id}";
+                $newImage = $this->product->images()->create(['path'=>$image->store('newFileName','public')]);
+
+                dispatch(new ResizeImage($newImage->path , 400 , 300));
             }
+            File::deleteDirectory(storage_path("/app/livewire-tmp"));
         }
 
         $this->reset();
