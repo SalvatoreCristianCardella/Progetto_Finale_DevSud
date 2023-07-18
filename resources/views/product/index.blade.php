@@ -1,9 +1,10 @@
 <x-layout>
 
-    <div class="container-fluid">
-        <div class="row justify-content-evenly">
+    <div class="container">
+        <div class="row justify-content-between">
+            <h1 class="marginCustom">{{__('ui.indexTitle')}}</h1>
             @foreach ($products as $product)
-            <div class="col-12 col-md-3 marginCustom">
+            <div class="col-10 col-md-4 d-flex justify-content-around">
                 <x-product.card
                 :product="$product"
                 />

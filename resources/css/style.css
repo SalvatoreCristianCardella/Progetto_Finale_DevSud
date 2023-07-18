@@ -29,3 +29,7 @@
     background: var(--blue);
     color: white;
   }
+
+  .table-custom{
+    overflow-x:auto;
+  }

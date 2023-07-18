@@ -16,7 +16,7 @@ class ProductController extends Controller
 
     public function index()
     {  
-       $products = Product::where('is_Accepted',true)->orderBy('created_at', 'desc')->paginate(4);
+       $products = Product::where('is_Accepted',true)->orderBy('created_at', 'desc')->paginate(6);
   
         return view('product.index', compact('products'));
     }

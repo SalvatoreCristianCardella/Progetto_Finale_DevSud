@@ -1,7 +1,8 @@
 .box-form{
-    width: 600px;
+    width: 100%;
+ 
     border-radius: 10px;
-    /* padding-top: 100px; */
+    padding-top: 100px;
     padding-bottom: 80px;
     margin-top: 50px !important;
     margin-bottom:80px ;
@@ -19,7 +20,14 @@
 }
 
 
-
+.img-preview{
+  width: 400px;
+  height: 300px;
+  position: relative;
+ 
+ 
+  background-color: white;
+}
 
 .retro{
   background-color: white;

@@ -22,4 +22,9 @@ class FrontController extends Controller
         $searched = $request ->searched;
         return view('product.search', compact('products','searched'));
     }
+
+    public function setLanguage ($lang){
+        session ()->put('locale', $lang);
+        return redirect()->back();
+    }
 }

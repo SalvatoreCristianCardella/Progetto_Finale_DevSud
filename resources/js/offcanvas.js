@@ -60,4 +60,3 @@ btnLogin.addEventListener('click' , ()=>{
 
 }
 )
-AOS.init();

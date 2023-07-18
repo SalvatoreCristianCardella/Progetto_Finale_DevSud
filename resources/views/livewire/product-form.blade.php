@@ -1,48 +1,28 @@
+
 <div class="container">
   <div class="row">
     <div class="col-12-col-md-6">
       <div class="d-flex flex-column justify-content-center align-items-center">
         <div class="header box-form">
           <div class="inner-header flex flex-column">
-            <h2 class="mt-5">Inserisci il tuo annuncio</h2>
+            <h2 class="mt-5">{{__('ui.form1')}}</h2>
             <div>
-              <form wire:submit.prevent="store()">
+              <form class="d-flex" wire:submit.prevent="store()">
+                <div>
                 <div class="mb-3">
-                  <label for="form" class="form-label fs-5">Titolo</label>
+                  <label for="form" class="form-label fs-5">{{__('ui.form2')}}</label>
                   <input class="form-control" wire:model="title"type="title" id="title">
                   @error('title') <span class="text-danger fst-italic">{{ $message }}</span> @enderror
                 </div>
                 <div class="mb-3">
-                  <label for="form" class="form-label fs-5">Descrizione</label>
+                  <label for="form" class="form-label fs-5">{{__('ui.form4')}}</label>
                   <textarea  class="form-control" wire:model="description" cols="30" rows="9" type="description" id="description"></textarea>
                   @error('description') <span class="text-danger fst-italic">{{ $message }}</span> @enderror
                 </div>
                 
-                 <div class="mb-3">
-                  <label for="img" class="form-label fs-5">img</label>
-                  <input class="form-control shadow @error('temporary_images.*')is-invalid @enderror" wire:model="temporary_images" multiple type="file" placeholder="img" id="img">
-                  @error('temporary_images.*')
-                    <p class="text-danger mt-2">{{$message}}</p>  
-                  @enderror
-                  @if (!empty($images))
-                  <div class="row">
-                    <div class="col-12">
-                      <p>foto</p>
-                      <div class="row border border-4 border-info rounded shadow py-4 ">
-                        @foreach ($images as $key=>$image)
-                        <div class="col my-3">
-                          <div class="img-preview mx-auto shadow rounded" style="background-image: url({{$image->temporaryUrl()}})"></div>
-                          <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
-                        </div>
-                        @endforeach
-                      </div>
-                    </div>
-                  </div>
-                    
-                  @endif
-                </div>
+                 
                 <div class="mb-3">
-                  <label for="category" class="form-label fs-5">Categorie</label>
+                  <label for="category" class="form-label fs-5">{{__('ui.form7')}}</label>
                   <select wire:model.defer="category" class="form-select">              
                     @foreach ($categories as $category)
                     <option value="{{ $category->id }}"
@@ -53,11 +33,47 @@
                       @error('category_id') <span class="text-danger fst-italic">{{$message}}</span> @enderror
                     </div>
                     <div class="mb-3">
-                      <label for="form" class="form-label fs-5">Prezzo</label>
+                      <label for="form" class="form-label fs-5">{{__('ui.form8')}}</label>
                       <input class="form-control" wire:model="price" type="price" id="price">
                       @error('price') <span class="text-danger fst-italic">{{ $message }}</span> @enderror
                     </div>
-                    <button type="submit" class="retro">Crea annuncio</button>
+                    <button type="submit" class="retro">{{__('ui.form9')}}</button>
+                  </div>
+
+                  {{-- immagini --}}
+                  <div class="ms-5">
+                    <div class="mb-3">
+                      <label for="img" class="form-label fs-5">{{__('ui.form5')}}</label>
+                      <input class="form-control shadow @error('temporary_images.*')is-invalid @enderror" wire:model="temporary_images" multiple type="file" placeholder="{{__('ui.img')}}" id="img">
+                      @error('temporary_images.*')
+                        <p class="text-danger mt-2">{{$message}}</p>  
+                      @enderror
+                      @if (!empty($images))
+                      <div class="row">
+                        <div class="col-12">
+                          <div style="height: 500px" class="row border border-4 border-info rounded shadow py-4">
+                            <p>Photo Preview</p>
+                            
+                            @foreach ($images as $key=>$image)
+                  
+                            
+                           <div class="col my-3">
+                              <div class="img-preview shadow rounded" style="background: url({{$image->temporaryUrl()}});"></div>
+                            </div>
+                  
+                            {{-- <img class="img-preview" src="{{$image->temporaryUrl()}}" alt=""> --}}
+                  
+                              <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">{{__('ui.form6')}}</button>
+                            </div>
+                            @endforeach
+                          </div>
+                        </div>
+                      </div>
+                        
+                      @endif
+                    </div>
+                  
+                  </div>
                   </form>
                 </div>
                 <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -75,6 +91,9 @@
             </div> 
           </div> 
         </div>
+        
       </div>
+      
   </div>
 </div>
+

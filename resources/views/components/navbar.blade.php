@@ -7,31 +7,33 @@
     <div class="collapse navbar-collapse rounded" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0 w-100 d-flex justify-content-center align-items-center">
         <li class="nav-item">
-          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('product.index')}}">Tutti gli articoli</a>
+          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('product.index')}}">{{__('ui.nav1')}}</a>
         </li>
         @auth
         <li class="nav-item">
-          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('product.create')}}">Crea Annuncio</a>
+          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('product.create')}}">{{__('ui.nav2')}}</a>
         </li> 
         
         {{-- ZONA REVISONE --}}
         @if(Auth::user()->is_revisor)
-        <a class="nav-link nav-link color-custom fs-6 position-relative" href="{{route('revisor.index')}}">Zona revisore
+        <a class="nav-link nav-link color-custom fs-6 position-relative" href="{{route('revisor.index')}}">{{__('ui.nav3')}}
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Product::toBeRevisionedCount()}}
           <span class="visually-hidden">unread messages</span>
         </span>
         </a>
         @else
         <li class="nav-item">
-          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('revisor.view')}}">Diventa revisore</a>
+          <a class="nav-link color-custom fs-6" aria-current="page" href="{{route('revisor.view')}}">{{__('ui.nav4')}}</a>
         </li> 
         @endif
         {{-- FINE REVISORE --}}
         @endauth 
         <li class="nav-item">
+
+        {{--CATEGORIE  --}}
         <div class="dropdown">
           <button class="btn color-custom fs-6 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categorie
+            {{__('ui.nav5')}}
           </button>
           <ul class="dropdown-menu">
             @foreach ($categories as $category)
@@ -39,13 +41,31 @@
             @endforeach
           </ul> 
         </div>  
-      </li>  
+      </li>
+      {{-- FINE CATEGORIE --}}
+
+
+      {{-- LANGUAGE --}}
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+         <i class="fa-solid fa-earth-americas fa-bounce fa-xl"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li class=""><a class="dropdown-item" href="#"><x-_locale lang="it" />Italiano</a></li>
+          <li><a class="dropdown-item" href="#"><x-_locale lang="en" />English</a></li>
+          <li><a class="dropdown-item" href="#"><x-_locale lang="es" />Español</a></li>
+        </ul>
+      </div>
+      {{-- FINE LANGUAGE --}}
       </ul>
       
+      {{-- BARRA DI RICERCA --}}
       <form class="d-flex justify-content-center align-items-center" role="search" action="{{route('product.search')}}" method="GET">
-        <input class="form-control me-2 search-custom" type="search" placeholder="Cerca" aria-label="Search" name='searched'>
-        <button class="button-57 d-flex justify-content-center" type="submit" role="button"><span class="text"><i class="fa-solid fa-magnifying-glass fa-bounce"></i></span><span>Cerca annunci</span></button> 
+        <input class="form-control me-2 search-custom" type="search" placeholder="{{__('ui.place-btn')}}" aria-label="Search" name='searched'>
+        <button class="button-57 d-flex justify-content-center" type="submit" role="button"><span class="text"><i class="fa-solid fa-magnifying-glass fa-bounce"></i></span><span>{{__('ui.nav7')}}</span></button> 
       </form>
+      {{-- FINE BARRA DI RICERCA --}}
+
  
       {{-- Bottoni registrati e login --}}
     <div class="d-flex justify-content-evenly align-items-center">
@@ -60,7 +80,7 @@
     </div>
       
 
-      <button class="button-48 mx-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#registrati" role="button" id="btn-open-register"><span class="text">Registrati</span></button>
+      <button class="button-48 mx-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#registrati" role="button" id="btn-open-register"><span class="text">{{__('ui.btn-register')}}</span></button>
 
       <button class="button-48 mx-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#login" role="button" id="btn-open-login"><span class="text">Login</span></button>
       @endif
