@@ -52,7 +52,8 @@ p {
 .header {
   position:relative;
   text-align:center;
-  background: linear-gradient(60deg, #284b63 0%, #3c6e71 100%);
+  /* background: linear-gradient(60deg, #284b63 0%, #3c6e71 100%); */
+  background-color: red;
   color:white;
   margin-top: -80px;
 }

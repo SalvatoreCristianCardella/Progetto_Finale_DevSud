@@ -14,83 +14,60 @@
 
             </div>
             
-            <div class="col-12 col-md-6 mt-5"> 
-                <div class="container-gallery">
-	
-                    <div class="feature">
-                        <figure class="featured-item image-holder r-3-2 transition"></figure>
-                    </div>
-                    
-                    <div class="gallery-wrapper">
-                        {{-- questo serve per vedere le foto:
-                        @if ($product->images)
-                <div class="carousel-inner">
-                    @foreach ($product->images as $image)
-                    <div class="carousel-item @if ($loop->first)active @endif">
-                    <img src="{{Storage::url($image->path)}}" class="img-fluid p-3 rounded" alt="">
-                </div>      
-                    @endforeach
-                </div>
-                    @else
+            <div class="col-12 col-md-6 mt-5">
+
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://picsum.photos/id/27/1200/400" class="img-fluid p-3 rounded" alt="">
-                        </div>
-                        <div class="carousel-item active">
-                            <img src="https://picsum.photos/id/27/1200/400" class="img-fluid p-3 rounded" alt="">
-                        </div>
-                        <div class="carousel-item active">
-                            <img src="https://picsum.photos/id/27/1200/400" class="img-fluid p-3 rounded" alt="">
-                        </div>
-                    </div>
-                @endif  --}}
-                        <div class="gallery">
-                                <div class="item-wrapper">
-                                    <figure class="gallery-item image-holder r-3-2 active transition"></figure>
-                                </div>
-                                <div class="item-wrapper">
-                                    <figure class="gallery-item image-holder r-3-2 transition"></figure>
-                                </div>
-                                <div class="item-wrapper">
-                                    <figure class="gallery-item image-holder r-3-2 transition"></figure>
-                                </div>
-                                <div class="item-wrapper">
-                                    <figure class="gallery-item image-holder r-3-2 transition"></figure>
-                                </div>
-                                <div class="item-wrapper">
-                                    <figure class="gallery-item image-holder r-3-2"></figure>
-                                </div>
-                                <div class="item-wrapper">
-                                    <figure class="gallery-item image-holder r-3-2 transition"></figure>
-                                </div>
-                                <div class="item-wrapper">
-                                    <figure class="gallery-item image-holder r-3-2 transition"></figure>
-                                </div>
-                                <div class="item-wrapper">
-                                    <figure class="gallery-item image-holder r-3-2 transition"></figure>
-                                </div>
-                                <div class="item-wrapper">
-                                    <figure class="gallery-item image-holder r-3-2 transition"></figure>
-                                </div>
-                                <div class="item-wrapper">
-                                    <figure class="gallery-item image-holder r-3-2 transition"></figure>
-                                </div>
-                        </div>
-                    </div>
+                        @foreach ($product->images as $image)
+                      <div class="carousel-item active">
+                        <img src="{{Storage::url($image->path)}}" class="d-block w-100" alt="...">
+                      </div>
+                      @endforeach
                     
-                    <div class="controls d-flex">
-                        <button class="move-btn left">&larr;</button>
-                        <button class="move-btn right">&rarr;</button>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                
+                        
+                {{-- @foreach ($product->images as $image)
+                <section id="gallery">
+                    <div class="container">
+                      <div id="image-gallery">
+                        <div class="row">
+                            
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image @if ($loop->first)active @endif">
+                                <div class="img-wrapper">
+                                    <a href="{{Storage::url($image->path)}}"><img src="{{Storage::url($image->path)}}" class="img-responsive"></a>
+                                    <div class="img-overlay">
+                                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>      
+                        </div><!-- End row -->
+                      </div><!-- End image gallery -->
+                    </div><!-- End container --> 
+                    </section> --}}
+                    {{-- @endforeach --}}
                     
-                </div>
+
+                        {{-- @foreach ($product->images as $image) --}}
+                        
+                        
+
+                      {{-- @endforeach --}}
+                    
                 
             </div>
-
         </div>
-
    </div>
 
-    
+   
 
 </x-layout>

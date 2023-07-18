@@ -8,11 +8,11 @@
            
             @if (Auth::user() != null)
 
-                <div class="flex">
+                {{-- <div class="flex">
                     <a href="{{route('product.index')}}"><p class="circle1" data-aos="flip-right" data-aos-delay="100"><i class="fa-solid fa-magnifying-glass fa-bounce fa-2xl mt-5"></i></p></a>
                     <a href="{{route('product.create')}}"><p class="circle2" data-aos="flip-right" data-aos-delay="200"><i class="fa-solid fa-bag-shopping fa-fade fa-2xl mt-5"></i></p></a>
                     <a href="{{ route('home')}}"><p class="circle3" data-aos="flip-right" data-aos-delay="300"><i class="fa-solid fa-cart-shopping fa-beat fa-2xl mt-5" style="color: #ffffff;"></i></p></a>
-                </div>
+                </div> --}}
                 
                 
                 <div class="d-flex flex-column">
@@ -40,16 +40,9 @@
 
                         <p class="text-white mt-5 fs-5" data-aos="zoom-out-down"><a data-bs-toggle="offcanvas" data-bs-target="#registrati" role="button" id="btn-open-register" class="d-inline text-decoration-none btn-revisor-footer rounded">{{__('ui.btn-register')}}</a>
                     </div>
-            
-                
                 </div>
             </div>
-
-
             @endif
-            
-
-        
             
         </div>
 

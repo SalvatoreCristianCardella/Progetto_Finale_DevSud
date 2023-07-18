@@ -1,5 +1,6 @@
 .box-form{
-    width: 600px;
+    width: 100%;
+    /* background-color: aliceblue !important; */
     border-radius: 10px;
     /* padding-top: 100px; */
     padding-bottom: 80px;
@@ -19,7 +20,14 @@
 }
 
 
-
+.img-preview{
+  width: 400px;
+  height: 300px;
+  position: relative;
+  z-index: 999;
+  /* background: url({{$image->temporaryUrl()}}) */
+  /* background-color: white; */
+}
 
 .retro{
   background-color: white;

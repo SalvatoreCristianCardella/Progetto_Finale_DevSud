@@ -43,9 +43,10 @@ Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.in
 Route::patch('accept/product/{product}',[RevisorController::class,'acceptproduct'])->name('revisor.accept');
 Route::patch('reject/product/{product}',[RevisorController::class,'rejectproduct'])->name('revisor.reject');
 Route::get('/revisor/edit',[RevisorController::class,'edit'])->name('revisor.edit');
+});
+
 Route::get('/make/{user}',[RevisorController::class,'makeRevisor'])->name('revisor.make');
 
-});
 
 // Rendi utente revisore
 Route::get('/search/product',[FrontController::class, 'searchProduct'])->name('product.search');

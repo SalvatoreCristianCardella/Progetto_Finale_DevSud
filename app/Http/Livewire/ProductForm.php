@@ -20,7 +20,7 @@ class ProductForm extends Component
     public $category;
     public $product;
     public $images=[];
-    public $temporary_images;
+    public $temporary_images=[];
     protected $rules = [
         'title'=>'required|min:4',
         'description'=>'required|min:15',
@@ -41,14 +41,14 @@ class ProductForm extends Component
     ];
     public function updatedTemporaryImages(){
         if($this->validate([
-            'temporary_images.*'=>'image|max:1024',
+            'temporary_images.*'=>'image',
             
 
         ])){
             foreach($this->temporary_images as $image){
                 $this->images[]=$image;
-            };
-        };
+            }
+        }
     }
     public function removeImage($key){
         if(in_array($key,array_keys($this->images))){
