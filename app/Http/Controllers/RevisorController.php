@@ -24,15 +24,16 @@ class RevisorController extends Controller
             $product->setAccepted(false);
             return redirect()->back()->with('message','Complimenti, hai rifiutato l\' annuncio');
         }
-        Public function become(){
-            Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
+        Public function become(Request $request){
+            $presentation= $request->input('description');
+            $Cv= $request->file('curriculum')->store('public/mail');
+            Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user(),$presentation,$Cv));
             return redirect('')->with('message','Hai richiesto con successo di diventare revisore');
         }
         public function makeRevisor(User $user){
             Artisan::call('presto:makeUserRevisor',["email"=>$user->email]);
             return redirect ('/')->with('message','L\'utente è diventato revisore');
          }
-
          public function edit(){
             $products_accepted=Product::all()->where('is_accepted');
             $products_rejected=Product::all()->where('is_accepted',false);

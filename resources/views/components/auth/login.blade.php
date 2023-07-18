@@ -10,7 +10,7 @@
               <label for="email" class="form-label">Email address</label>
               <input name="email" type="email" class="form-control  @error('email') is-invalid @enderror" id="email"> 
               @error('email')
-              <div class="alert text-danger">{{ $message }}</div>
+              <div class="alert text-danger error-login">{{ $message }}</div>
               @enderror
             </div>
     
@@ -18,7 +18,7 @@
               <label for="password" class="form-label">Password</label>
               <input name="password" type="password" class="form-control @error('password') is-invalid @enderror" id="password">
               @error('password')
-              <div class="alert text-danger">{{ $message }}</div>
+              <div class="alert text-danger error-login">{{ $message }}</div>
               @enderror
             </div>
     

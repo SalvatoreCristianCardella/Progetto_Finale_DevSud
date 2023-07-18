@@ -1,16 +1,24 @@
 <x-layout>
 
-    <form method="POST" action="{{route('revisor.become')}}">
-        <div class="mb-3">
-            <label for="descriptio">Scrivi la tua lettera di presentazione</label>
-          <textarea name="description" id="description" cols="30" rows="10" placeholder="Descriviti">
+    <form method="POST" action="{{route('revisor.become')}}" enctype="multipart/form-data">
+      @csrf
+        <div class="mt-5">
+            <h2>Diventa revisore</h2>
+
+            <label for="description"><h5 class="mt-3 m-5">Scrivi la tua lettera di presentazione</h5></label>
             
+          </div>
+
+          <textarea name="description" class="mx-5" id="description" cols="80" rows="8" placeholder="Descriviti">
+              
           </textarea>
-          <label for="curriculum">Carica il tuo curriculum vitae</label>
-          <input type="file" id="curriculum">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+          <div class="m-5">
+            <label for="curriculum"><h5>Carica il tuo curriculum vitae</h5></label>
+            <input type="file" name="curriculum" id="curriculum">
+          </div>
+        <button type="submit" class="btn btn-primary mx-5">Invia richiesta</button>
       </form>
 
 
 </x-layout>
+
