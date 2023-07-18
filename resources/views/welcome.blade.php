@@ -13,8 +13,7 @@
                     <a href="{{route('product.create')}}"><p class="circle2" data-aos="flip-right" data-aos-delay="200"><i class="fa-solid fa-bag-shopping fa-fade fa-2xl mt-5"></i></p></a>
                     <a href="{{ route('home')}}"><p class="circle3" data-aos="flip-right" data-aos-delay="300"><i class="fa-solid fa-cart-shopping fa-beat fa-2xl mt-5" style="color: #ffffff;"></i></p></a>
                 </div>
-                {{-- {{route('product.search')}} --}}
-                {{-- {{route('product.index')}} --}}
+                
                 
                 <div class="d-flex flex-column">
                     <h1 data-aos="zoom-out"  data-aos-duration="800" class="mb-3">Presto.it</h1>

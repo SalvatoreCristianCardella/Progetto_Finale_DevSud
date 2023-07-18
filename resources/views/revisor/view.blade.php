@@ -14,11 +14,18 @@
           <textarea name="description" class="mx-5" id="description" cols="80" rows="8" placeholder="{{__('ui.rev3')}}">
               
           </textarea>
+          @error('description')
+                        <div class="alert text-danger">{{ $message }}</div>
+           @enderror
           <div class="m-5">
             <label for="curriculum"><h5>{{__('ui.rev4')}}</h5></label>
             <input type="file" name="curriculum" id="curriculum">
           </div>
         <button type="submit" class="btn btn-primary mx-5">{{__('ui.rev5')}}</button>
+          @error('curriculum')
+            <div class="alert text-danger">{{ $message }}</div>
+          @enderror
+       
       </form>
 
 
