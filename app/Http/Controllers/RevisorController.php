@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\RevisorRequest;
 use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
@@ -24,7 +25,7 @@ class RevisorController extends Controller
             $product->setAccepted(false);
             return redirect()->back()->with('message','Complimenti, hai rifiutato l\' annuncio');
         }
-        Public function become(Request $request){
+        Public function become(RevisorRequest $request){
             $presentation= $request->input('description');
             $Cv= $request->file('curriculum')->store('public/mail');
             Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user(),$presentation,$Cv));
@@ -32,7 +33,7 @@ class RevisorController extends Controller
         }
         public function makeRevisor(User $user){
             Artisan::call('presto:makeUserRevisor',["email"=>$user->email]);
-            return redirect ('/')->with('message','L\'utente è diventato revisore');
+            return redirect()->route('home')->with('message','L\'utente è diventato revisore');
          }
          public function edit(){
             $products_accepted=Product::all()->where('is_accepted');

@@ -25,7 +25,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::post('/become/revisor',[RevisorController::class, 'become'])->name('revisor.become');
     Route::get('/view/revisor',[RevisorController::class, 'view'])->name('revisor.view');
-    Route::get('/make/{user}',[RevisorController::class,'makeRevisor'])->name('revisor.make');
+    
+   
 
 });
 
@@ -36,12 +37,14 @@ Route::get('/show/category/{category}',  [FrontController::class, 'show'])->name
 
 
 
+
 //Rotte per il revisore
 Route::middleware(['IsRevisor'])->group(function(){
 Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.index');
 Route::patch('accept/product/{product}',[RevisorController::class,'acceptproduct'])->name('revisor.accept');
 Route::patch('reject/product/{product}',[RevisorController::class,'rejectproduct'])->name('revisor.reject');
 Route::get('/revisor/edit',[RevisorController::class,'edit'])->name('revisor.edit');
+Route::get('/make/{user}',[RevisorController::class,'makeRevisor'])->name('revisor.make');
 
 });
 // Rendi utente revisore
