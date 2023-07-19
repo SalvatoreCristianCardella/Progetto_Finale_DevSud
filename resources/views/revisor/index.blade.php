@@ -8,38 +8,49 @@
     <h5>Prezzo:{{$product_to_check->price}}</h5>
     <h5>Creato il:{{$product_to_check->created_at->format('d/m/y')}}</h5>
 </div>
-@if ($product_to_check)
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-4">
-            <div id="showCarousel" class="carousel slide" data-bs-ride="carousel">
-                @if ($product_to_check->images)
+
+<div class="container mb-5 pb-5">
+    <div class="row justify-content-center mt-3 h-75">
+        <div class="col-12 col-md-5">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade">
                 <div class="carousel-inner">
-                    @foreach ($product_to_check->images as $image)
-                    <div class="carousel-item @if ($loop->first)active @endif">
-                    <img src="{{Storage::url($image->path)}}" class="img-fluid p-3 rounded" alt="">
-                </div>      
-                    @endforeach
-                </div>
+
+                    @if ($product_to_check->images->isEmpty())
+                
+                        <div class="carousel-item active">
+                            <img src="https://picsum.photos/501" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://picsum.photos/501" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://picsum.photos/502" class="d-block w-100" alt="...">
+                        </div>
                     @else
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="./default.jpg" class="img-fluid p-3 rounded" alt="">
-                        </div>
-                        <div class="carousel-item active">
-                            <img src="https://picsum.photos/id/27/1200/400" class="img-fluid p-3 rounded" alt="">
-                        </div>
-                        <div class="carousel-item active">
-                            <img src="https://picsum.photos/id/27/1200/400" class="img-fluid p-3 rounded" alt="">
-                        </div>
-                    </div>
-                @endif
-            </div>
+                
+                        @foreach($product_to_check->images as $image)
+                            <div class="carousel-item @if($loop->first) active @endif">
+                                <img src="{{ $image->getUrl(400, 300) }}" class="d-block w-100" alt="...">
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+                
+                    
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
         </div>
-    </div>
-</div>
     
-@endif
+
 <div class="row flex ">
     <div class="col-12 col-md-6">
     <form action="{{route('revisor.accept',['product'=>$product_to_check])}}" method="POST">
