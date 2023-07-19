@@ -69,14 +69,14 @@ class ProductForm extends Component
             foreach($this->images as $image){
                 // $this->product->images()->create(['path'=>$image->store('images','public')]);
                 $newFileName = "products/{$this->product->id}";
-                $newImage = $this->product->images()->create(['path'=>$image->store('newFileName','public')]);
+                $newImage = $this->product->images()->create(['path'=>$image->store($newFileName,'public')]);
 
                 dispatch(new ResizeImage($newImage->path , 400 , 300));
             }
             File::deleteDirectory(storage_path("/app/livewire-tmp"));
         }
+        $this->product->save();
 
-        $this->reset();
         return to_route('product.index')->with('message', 'Articolo aggiunto correttamente');
         
 

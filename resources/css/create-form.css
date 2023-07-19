@@ -23,10 +23,10 @@
 .img-preview{
   width: 400px;
   height: 300px;
-  position: relative;
+  /* position: relative; */
  
  
-  background-color: white;
+  /* background-color: white; */
 }
 
 .retro{

@@ -19,23 +19,28 @@ let errorLogin = document.querySelectorAll('.error-login');
 if(localStorage.getItem('offcanvasShow') === 'true' && errorName.length>0){
     offcanvas.classList.add('show');
 }
-
-btnOpenRegister.addEventListener('click' , ()=> {
-    offcanvas.classList.add('show');
-    localStorage.setItem('offcanvasShow' , 'true')
-})
-
-
-btnCloseRegister.addEventListener('click' , ()=> {
-    offcanvas.classList.remove('show');
-    localStorage.removeItem('offcanvasShow')
-})
-
-btnRegister.addEventListener('click' , ()=>{
-    localStorage.removeItem('offcanvasShow')
-
+if(btnOpenRegister){
+    btnOpenRegister.addEventListener('click' , ()=> {
+        offcanvas.classList.add('show');
+        localStorage.setItem('offcanvasShow' , 'true')
+    })
 }
-)
+
+if(btnCloseRegister){
+    btnCloseRegister.addEventListener('click' , ()=> {
+        offcanvas.classList.remove('show');
+        localStorage.removeItem('offcanvasShow')
+    })
+}
+
+if(btnRegister){
+    btnRegister.addEventListener('click' , ()=>{
+        localStorage.removeItem('offcanvasShow')
+    
+    }
+    )
+}
+
 
 
 
@@ -43,20 +48,26 @@ btnRegister.addEventListener('click' , ()=>{
 if(localStorage.getItem('offcanvasShowLogin') === 'true' && errorLogin.length>0){
     offcanvasLogin.classList.add('show');
 }
-
-btnOpenLogin.addEventListener('click' , ()=> {
-    offcanvasLogin.classList.add('show');
-    localStorage.setItem('offcanvasShowLogin' , 'true')
-})
-
-
-btnCloseLogin.addEventListener('click' , ()=> {
-    offcanvasLogin.classList.remove('show');
-    localStorage.removeItem('offcanvasShowLogin')
-})
-
-btnLogin.addEventListener('click' , ()=>{
-    localStorage.removeItem('offcanvasShowLogin')
-
+if(btnOpenLogin){
+    btnOpenLogin.addEventListener('click' , ()=> {
+        offcanvasLogin.classList.add('show');
+        localStorage.setItem('offcanvasShowLogin' , 'true')
+    })
 }
-)
+
+
+if(btnCloseLogin){
+    btnCloseLogin.addEventListener('click' , ()=> {
+        offcanvasLogin.classList.remove('show');
+        localStorage.removeItem('offcanvasShowLogin')
+    })
+}
+
+if(btnLogin){
+    btnLogin.addEventListener('click' , ()=>{
+        localStorage.removeItem('offcanvasShowLogin')
+    
+    }
+    )
+}
+
