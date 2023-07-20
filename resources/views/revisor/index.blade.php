@@ -10,7 +10,7 @@
 </div>
 
 <div class="container mb-5 pb-5">
-    <div class="row justify-content-center mt-3 h-75">
+    <div class="row justify-content-beetween mt-3 h-75">
         <div class="col-12 col-md-5">
             <div id="carouselExampleFade" class="carousel slide carousel-fade">
                 <div class="carousel-inner">
@@ -29,9 +29,31 @@
                     @else
                 
                         @foreach($product_to_check->images as $image)
-                            <div class="carousel-item @if($loop->first) active @endif">
+                            <div class="carousel-item d-flex @if($loop->first) active @endif">
                                 <img src="{{ $image->getUrl(400, 300) }}" class="d-block w-100" alt="...">
+                            {{-- <div class="col-md-3 border-end"> --}}
+                                <div>
+                                <h5 class="tc-accent mt-3">Tags</h5>
+                                <div class="pt-2">
+                                    @if ($image->labels)
+                                    @foreach ($image->labels as $label)
+                                    <p class="d-inline">{{$label}}</p>
+                                    @endforeach
+                                    @endif
+                                </div>
+                            {{-- </div> --}}
+                            {{-- <div class="col-md-3"> --}}
+                                <div class="card-body">
+                                    <h5 class="tc-accent">Revisione Immagine</h5>
+                                    <p>Adulti: <span class="{{$image->adult}}"></span></p>
+                                    <p>Satira: <span class="{{$image->spoof}}"></span></p>
+                                    <p>Medicina: <span class="{{$image->medical}}"></span></p>
+                                    <p>Violenza: <span class="{{$image->violence}}"></span></p>
+                                    <p>Contenuto Ammiccante: <span class="{{$image->racy}}"></span></p>
+                                </div>
                             </div>
+                            {{-- </div> --}}
+                           </div>
                         @endforeach
                     @endif
                 </div>
