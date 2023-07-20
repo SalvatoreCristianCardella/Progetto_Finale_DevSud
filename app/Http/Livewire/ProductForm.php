@@ -20,6 +20,8 @@ class ProductForm extends Component
     public $category;
     public $product;
     public $images=[];
+    public $image;
+    public $form_id;
     public $temporary_images;
     protected $rules = [
         'title'=>'required|min:4',
@@ -41,7 +43,7 @@ class ProductForm extends Component
     ];
     public function updatedTemporaryImages(){
         if($this->validate([
-            'temporary_images.*'=>'image',
+            'temporary_images.*'=>'image|max:1204',
             
 
         ])){
