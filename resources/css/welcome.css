@@ -53,7 +53,7 @@ p {
   position:relative;
   text-align:center;
   /* background: linear-gradient(60deg, #284b63 0%, #3c6e71 100%); */
-  background-color: red;
+ 
   color:white;
   margin-top: -80px;
 }
@@ -147,7 +147,7 @@ p {
 footer{
   background-color: var(--blue);
   padding: 0px;
-  margin: 0px;
+  /* margin-top: 150px; */
 }
 
 

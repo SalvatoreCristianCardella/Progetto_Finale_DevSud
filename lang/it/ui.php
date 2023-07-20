@@ -45,6 +45,8 @@ return[
 
     // PAGINA INDEX
     'indexTitle'=>'Tutti gli annunci:',
+    'btnDetail' => 'Dettagli',
+    'pubCard' => 'Pubblicato il: ',
 
     //PAGINA CREA ANNUNCIO
     'form1'=>'Inserisci il tuo annuncio',
@@ -56,6 +58,7 @@ return[
     'form8'=>'Prezzo',
     'form9'=>'Crea annuncio',
     'img'=>'img',
+    'photoP' => 'Anteprima Immagini',
 
 
     // PAGINA DIVENTA REVISORE
@@ -79,7 +82,7 @@ return[
     'category10'=>'Arredamento',
     'category11'=>'Altro',
 
-    // passato a salvo e nico
+
 
     // PAGINA CATEGORIE
     'showcategory1'=>'Ecco tutti gli annunci con la categoria: ',
@@ -110,6 +113,11 @@ return[
     'editprofile2'=>'Rifiuta',
     'editprofile3'=>'Lista annunci rifiutati',
     'editprofile4'=>'Accetta',
+    'editprofile5'=>'Annuncio da revisionare',
+    'editprofile6'=>'Non ci sono annunci da revisionare',
+
+
+
 
     
 
@@ -131,7 +139,7 @@ return[
 
 
 
-// {{__('ui.pHeader')}}
+// {{__('ui.editprofile5')}}
 
     
 

@@ -45,17 +45,23 @@ return[
 
     // PAGINA INDEX
     'indexTitle'=>'All announcements:',
+    'btnDetail' => 'Details',
+    'pubCard' => 'Publication date: ',
+
+
 
     //PAGINA CREA ANNUNCIO
     'form1'=>'Place your annoucement',
     'form2'=>'Title',
     'form4'=>'Description',
-    'form5'=>'insert images',
+    'form5'=>'Insert images',
     'form6'=>'Delete',
     'form7'=>'Categories',
     'form8'=>'Price',
     'form9'=>'Create',
     'img'=>'img',
+    'photoP' => 'Photo preview',
+
 
 
     // PAGINA DIVENTA REVISORE
@@ -77,7 +83,7 @@ return[
     'category8'=>'Informatics',
     'category9'=>'Properties',
     'category10'=>'Furniture',
-    'category11'=>  'Other',
+    'category11'=> 'Other',
 
     // PAGINA CATEGORIE
     'showcategory1'=>'Here are all the annoucements with the category: ',

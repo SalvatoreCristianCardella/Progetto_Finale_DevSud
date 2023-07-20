@@ -45,6 +45,9 @@ return[
 
     // PAGINA INDEX
     'indexTitle'=>'Todos los anuncios',
+    'btnDetail' => 'Detalles',
+    'pubCard' => 'Fecha de publicación: ',
+
 
     //PAGINA CREA ANNUNCIO
     'form1'=>'Crea tu anuncio',
@@ -56,6 +59,8 @@ return[
     'form8'=>'Precio',
     'form9'=>'Crea tu anuncio',
     'img'=>'img',
+    'photoP' => 'Previsualización de imágenes',
+
 
 
     // PAGINA DIVENTA REVISORE
@@ -68,12 +73,12 @@ return[
 
     // SEEDER CATEGORIE
     'category1'=>'Auto',
-    'category2'=>'Paseo en barco',
+    'category2'=>'Barcos',
     'category3'=>'Electrónica',
     'category4'=>'Deporte',
     'category5'=>'Pasatiempo',
     'category6'=>'Motocicletas y scooters',
-    'category7'=>'Juegos de vídeo',
+    'category7'=>'Videojuegos',
     'category8'=>'Informática',
     'category9'=>'Propiedades',
     'category10'=>'Muebles',

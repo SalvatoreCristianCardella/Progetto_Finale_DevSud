@@ -28,8 +28,8 @@ class ProductForm extends Component
         'description'=>'required|min:15',
         'price'=>'required|numeric',
         'category'=>'required',
-        'images.*'=>'required|image|max:1024',
-        'temporary_images.*'=>'required|image|max:1024',
+        'images.*'=>'required|image|',
+        'temporary_images.*'=>'required|image|',
     ];
     protected $messages =[
         'required'=>'il campo :attribute è richiesto',
@@ -43,7 +43,7 @@ class ProductForm extends Component
     ];
     public function updatedTemporaryImages(){
         if($this->validate([
-            'temporary_images.*'=>'image|max:1204',
+            'temporary_images.*'=>'image|',
             
 
         ])){

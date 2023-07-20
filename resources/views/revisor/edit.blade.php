@@ -1,9 +1,9 @@
 <x-layout>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row justify-content-between">
             <div class="col-12 col-md-6 table-custom">
                 
-                <h2>{{__('ui.editprofile1')}}</h2>
+                <h2 class="my-5">{{__('ui.editprofile1')}}</h2>
                 
                 <table class="table table-striped"> 
                     <thead> 
@@ -26,7 +26,7 @@
                                 <form action="{{route('revisor.reject',['product'=>$product])}}" method="POST">
                                     @csrf
                                     @method('PATCH')
-                                    <button type="submit" class="btn btn-success shadow">Rifiuta</button>
+                                    <button type="submit" class="btn btn-danger shadow">{{__('ui.editprofile2')}}</button>
                                 </form>
                                 
                             </td>
@@ -41,7 +41,7 @@
             </div>
             <div class="col-12 col-md-6 table-custom">
                 
-                <h2>Lista annunci rifiutati</h2>
+                <h2 class="my-5">{{__('ui.editprofile3')}}</h2>
                 
                 <table class="table table-striped"> 
                     <thead> 

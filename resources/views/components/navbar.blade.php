@@ -48,7 +48,7 @@
       {{-- LANGUAGE --}}
       <div class="dropdown">
         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-         <i class="fa-solid fa-earth-americas fa-bounce fa-xl"></i>
+         <i class="fa-solid fa-earth-americas fa-xl"></i>
         </button>
         <ul class="dropdown-menu">
           <li class=""><a class="dropdown-item" href="#"><x-_locale lang="it" />Italiano</a></li>
