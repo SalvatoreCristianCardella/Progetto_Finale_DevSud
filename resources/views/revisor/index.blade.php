@@ -27,13 +27,36 @@
                             @foreach($product_to_check->images as $image)
                             <div class="carousel-item @if($loop->first) active @endif">
                                 <img src="{{ $image->getUrl(400, 300) }}" class="d-block w-100 rounded" alt="...">
+                                <div>
+                                    <h5 class="tc-accent mt-3">Tags</h5>
+                                    <div class="pt-2">
+                                        @if ($image->labels)
+                                        @foreach ($image->labels as $label)
+                                        <p class="d-inline">{{$label}}</p>
+                                        @endforeach
+                                        @endif
+                                    </div>
+                               
+                                    <div class="card-body">
+                                        <h5 class="tc-accent">Revisione Immagine</h5>
+                                        <p>Adulti: <span class="{{$image->adult}}"></span></p>
+                                        <p>Satira: <span class="{{$image->spoof}}"></span></p>
+                                        <p>Medicina: <span class="{{$image->medical}}"></span></p>
+                                        <p>Violenza: <span class="{{$image->violence}}"></span></p>
+                                        <p>Contenuto Ammiccante: <span class="{{$image->racy}}"></span></p>
+                                    </div>
+                                </div>
+                              
+                               </div>
                             </div>
                             @endforeach
                             @endif
                         </div>
                         
                         
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                                   
+                    
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
                         data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
@@ -63,7 +86,7 @@
                 </form>
             </div>
         </div>
-        @endif
+       @endif
         
         
         
