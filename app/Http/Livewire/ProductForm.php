@@ -2,9 +2,12 @@
 
 namespace App\Http\Livewire;
 
+
+use App\Jobs\Watermark;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
 use App\Jobs\GoogleVisionLabelImage;
@@ -74,11 +77,14 @@ class ProductForm extends Component
                 // $this->product->images()->create(['path'=>$image->store('images','public')]);
                 $newFileName = "products/{$this->product->id}";
                 $newImage = $this->product->images()->create(['path'=>$image->store($newFileName,'public')]);
+                
+                RemoveFaces::withChain([
 
-                dispatch(new GoogleVisionLabelImage($newImage->id));
-                dispatch(new GoogleVisionSafeSearch($newImage->id));
-                dispatch(new ResizeImage($newImage->path , 400 , 300));
-               
+                    new GoogleVisionLabelImage($newImage->id),
+                    new GoogleVisionSafeSearch($newImage->id),
+                    new ResizeImage($newImage->path , 400 , 300),
+                    
+                ])->dispatch($newImage->id);
             }
             File::deleteDirectory(storage_path("/app/livewire-tmp"));
         }
