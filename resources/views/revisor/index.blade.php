@@ -11,39 +11,41 @@
         </div>
         
         <div class="container">
-            <div class="row justify-content-center mt-3 h-75">
-                <div class="col-12 col-md-5">
+            <div class="row mt-3 justify-content-center w-100">
+                <div class="col-12 col-md-9">
                     <div id="carouselExampleFade" class="carousel slide carousel-fade">
                         <div class="carousel-inner">
                             
                             @if ($product_to_check->images->isEmpty())
                             
                             <div class="carousel-item active">
-                                <img src="/img/default.png" class="d-block w-100 rounded" alt="...">
+                                <img src="/img/default.png" alt="immagine default">
                             </div>
                             
                             @else
                             
                             @foreach($product_to_check->images as $image)
                             <div class="carousel-item @if($loop->first) active @endif">
-                                <img src="{{ $image->getUrl(400, 300) }}" class="d-block w-100 rounded" alt="...">
-                                <div>
+                                <div class="d-flex justify-content-center container">
+                                    <div class="d-flex flex-column mx-4">
                                     <h5 class="tc-accent mt-3">Tags</h5>
-                                    <div class="pt-2">
-                                        @if ($image->labels)
-                                        @foreach ($image->labels as $label)
-                                        <p class="d-inline">{{$label}}</p>
-                                        @endforeach
-                                        @endif
+                                        <div class="pt-2">
+                                            @if ($image->labels)
+                                            @foreach ($image->labels as $label)
+                                            <p class=" text-white">{{$label}} | </p>
+                                            @endforeach
+                                            @endif
+                                        </div>
                                     </div>
-                               
-                                    <div class="card-body">
+                                        <img src="{{ $image->getUrl(400, 300) }}" class=" d-block rounded-4" style="width: 50%" alt="...">
+
+                                    <div class="ms-5" style="width: 120px" >
                                         <h5 class="tc-accent">Revisione Immagine</h5>
-                                        <p>Adulti: <span class="{{$image->adult}}"></span></p>
-                                        <p>Satira: <span class="{{$image->spoof}}"></span></p>
-                                        <p>Medicina: <span class="{{$image->medical}}"></span></p>
-                                        <p>Violenza: <span class="{{$image->violence}}"></span></p>
-                                        <p>Contenuto Ammiccante: <span class="{{$image->racy}}"></span></p>
+                                        <p  class="text-white">Adulti: <span class="{{$image->adult}}"></span></p>
+                                        <p class="text-white">Satira: <span class="{{$image->spoof}}"></span></p>
+                                        <p class="text-white">Medicina: <span class="{{$image->medical}}"></span></p>
+                                        <p class="text-white">Violenza: <span class="{{$image->violence}}"></span></p>
+                                        <p class="text-white">Contenuto Ammiccante: <span class="{{$image->racy}}"></span></p>
                                     </div>
                                 </div>
                               
@@ -52,9 +54,24 @@
                             @endforeach
                             @endif
                         </div>
-                        
-                        
-                                   
+
+                        <div class="row flex mt-2 justify-content-center">
+                            <div class="col-12 col-md-2">
+                                <form action="{{route('revisor.accept',['product'=>$product_to_check])}}" method="POST">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button type="submit" class="btn btn-success shadow mb-2">Accetta</button>
+                                </form>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <form action="{{route('revisor.reject',['product'=>$product_to_check])}}" method="POST">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
+                                </form>
+                            </div>
+                        </div>
+                                    
                     
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
                         data-bs-slide="prev">
@@ -68,27 +85,8 @@
                 </button>
             </div>
         </div>
-        
-        
-        <div class="row flex my-5  justify-content-center">
-            <div class="col-12 col-md-2">
-                <form action="{{route('revisor.accept',['product'=>$product_to_check])}}" method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button type="submit" class="btn btn-success shadow mb-2">Accetta</button>
-                </form>
-            </div>
-            <div class="col-12 col-md-2">
-                <form action="{{route('revisor.reject',['product'=>$product_to_check])}}" method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
-                </form>
-            </div>
-        </div>
+    
        @endif
-        
-        
         
         
     </x-layout>

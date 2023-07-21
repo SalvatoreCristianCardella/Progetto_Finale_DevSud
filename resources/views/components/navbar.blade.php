@@ -70,7 +70,13 @@
       {{-- Bottoni registrati e login --}}
     <div class="d-flex justify-content-evenly align-items-center">
       @if (Auth::user() != null)
-                @auth <a href="{{route('profile')}}" class="text-decoration-none"><span class="nav-link ms-5 text-capitalize profile-m-custom color-custom fs-5">{{ Auth::user()->name }}</span></a> @endauth
+                @auth
+                <a class="navImg" href="{{route('profile')}}">
+                  <img class="img-fluid" src="@if (Auth::user()->image) {{Storage::url(Auth::user()->image->path)}} @else /img/default.png
+                  @endif" alt="">
+                </a>
+                 <a href="{{route('profile')}}" class="text-decoration-none"><span class="nav-link ms-4 text-capitalize profile-m-custom color-custom fs-5">{{ Auth::user()->name }}</span></a>
+                @endauth
                 
                 <form action="{{ route('logout') }}" method="post">
                     @csrf

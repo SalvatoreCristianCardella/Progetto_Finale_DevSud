@@ -1,8 +1,8 @@
 <x-layout>
     
-    <div class="container-fluid">
+    <div class="container">
         <div class="row justify-content-evenly">
-            <h1 class="mt-5">{{__('ui.showcategory1')}}{{$category->name}}</h1>
+            <h2 class="mt-5 text-center">{{__('ui.showcategory1')}}{{$category->name}}</h2>
 
             @forelse ($productscategory as $product)
             <div class="col-12 col-md-2">
@@ -13,7 +13,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-7 d-flex flex-column align-items-center justify-content-center ">
-                        <h2>{{__('ui.showcategory2')}} 
+                        <h3>{{__('ui.showcategory2')}} 
                             <h2 class="fw-bolder text-grey">{{$category->name}}</h2>
                             <p class="text-white fw-bold">{{__('ui.showcategory3')}}</p> 
                             @if (Auth::user() != null)

@@ -9,6 +9,14 @@
   padding-right: 0px;
 }
 
+.backgroundLinear{
+  position:relative;
+  text-align:center;
+  background: linear-gradient(360deg, #284b63 0%, #3c6e71 100%);
+  color:white;
+  margin-top: -80px;
+}
+
 
 @media screen and (max-width: 992px) {
     .box-form {
@@ -26,7 +34,7 @@
     width: 200px;
     background-size:contain;
     background-repeat: no-repeat;
-  
+    margin-top: 20px;
 }
 
 

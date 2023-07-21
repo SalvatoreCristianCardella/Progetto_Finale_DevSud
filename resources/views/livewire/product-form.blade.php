@@ -1,4 +1,4 @@
-<div class="header">
+<div class="backgroundLinear">
   
   <!--Content before waves-->
   <div class="inner-header-form">
@@ -50,7 +50,7 @@
                 @enderror
                 @if (!empty($images))
                 <div class="row">
-                  <p class="text-white">{{__('ui.photoP')}}</p>
+                  <p class="text-white mt-3">{{__('ui.photoP')}}</p>
                   <div class="col-12 d-flex flex-wrap justify-content-center">               
                     
                     @foreach ($images as $key=>$image)

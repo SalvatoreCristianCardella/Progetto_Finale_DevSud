@@ -67,6 +67,8 @@ return[
     'rev3'=>'Descriviti...',
     'rev4'=>'Carica il tuo curriculum vitae',
     'rev5'=>'Invia richiesta',
+    'rev6'=>'Come revisore potrai visionare gli annunci non ancora pubblicati e accettare o rifiutare in base alle nostre policy.',
+
 
 
     // SEEDER CATEGORIE
@@ -93,7 +95,7 @@ return[
     'showcategory6'=>'o effettua il',
 
     // PAGINA PROFILO
-    'indexprofile1'=>'Informazioni generali',
+    'indexprofile1'=>'Informazioni generali di:',
     'indexprofile2'=>'Nome utente: ',
     'indexprofile3'=>'Email utente: ',
     'indexprofile4'=>'Profilo creato il: ',

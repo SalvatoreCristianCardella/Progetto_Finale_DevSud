@@ -69,6 +69,8 @@ return[
     'rev3'=>'Describete..',
     'rev4'=>'Sube tu CV',
     'rev5'=>'Enviar Consulta',
+    'rev6'=>'Como revisor, podrá ver los anuncios que aún no se han publicado y aceptarlos o rechazarlos de acuerdo con nuestras políticas.',
+
 
 
     // SEEDER CATEGORIE
@@ -94,7 +96,7 @@ return[
     'showcategory6'=>'o hacer el',
 
     // PAGINA PROFILO
-    'indexprofile1'=>'Información general',
+    'indexprofile1'=>'Información general de:',
     'indexprofile2'=>'Nombre de usuario: ',
     'indexprofile3'=>'Correo electrónico del usuario: ',
     'indexprofile4'=>'Perfil creado en:',

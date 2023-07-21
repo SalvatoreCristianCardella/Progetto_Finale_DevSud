@@ -35,7 +35,8 @@ Route::get('/show/category/{category}',  [FrontController::class, 'show'])->name
 // Rotte Language
 Route::post('/lingua/{lang}',[FrontController::class, 'setLanguage'])->name('set_language_locale');
 
-
+// Rotta immagineProfilo
+Route::post('profile/img', [ProfileController::class,'imgprofile'])->name('profile_img');
 
 //Rotte per il revisore
 Route::middleware(['IsRevisor'])->group(function(){

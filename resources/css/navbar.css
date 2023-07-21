@@ -3,6 +3,7 @@
     height: 80px;  
     background-color: white;
 }
+
 .img-custom{
   width: 180px;
   margin-left: 30px;
@@ -28,6 +29,20 @@
    }
 }
 
+.navImg{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.navImg:hover {
+  border: 1px solid #284b63;
+}
 
 .color-custom{
   color: var(--grey);
@@ -38,7 +53,6 @@
  width: 150px;
  border-radius: 15px;
  height:58px;
-
 }
 
 /* bottoni login e registrati */

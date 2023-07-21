@@ -70,6 +70,8 @@ return[
     'rev3'=>'describe yourself',
     'rev4'=>'Upload your CV',
     'rev5'=>'Send inquiry',
+    'rev6'=>'As a reviewer, you will be able to view ads that have not yet been published and accept or reject them according to our policies.',
+
 
 
     // SEEDER CATEGORIE
@@ -94,7 +96,7 @@ return[
     'showcategory6'=>'or do the',
 
     // PAGINA PROFILO
-    'indexprofile1'=>'General informations',
+    'indexprofile1'=>'General informations:',
     'indexprofile2'=>'Username: ',
     'indexprofile3'=>'User email: ',
     'indexprofile4'=>'Profile created on: ',

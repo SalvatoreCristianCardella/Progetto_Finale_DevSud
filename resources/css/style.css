@@ -26,7 +26,7 @@
   }
 
   .bg-custom{
-    background: var(--blue);
+    background: linear-gradient(180deg, #284b63 0%, #3c6e71 100%);
     color: white;
   }
 
@@ -38,4 +38,8 @@
   .page-link{
     background-color:var(--lightgray) !important;
     color: var(--green);
+  }
+  
+  .zCustom{
+    z-index: 99;
   }
