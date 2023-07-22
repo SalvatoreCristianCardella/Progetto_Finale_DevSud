@@ -5,10 +5,11 @@
             <h2 class="mt-5 text-center">{{__('ui.showcategory1')}}{{$category->name}}</h2>
 
             @forelse ($productscategory as $product)
-            <div class="col-12 col-md-2">
+            <div class="col-12 col-md-4">
                 <x-product.card
                 :product="$product"/> 
-            </div>              
+            </div> 
+
             @empty
             <div class="container">
                 <div class="row">
@@ -36,6 +37,8 @@
         </div>
     </div>
     @endforelse
+    {{$productscategory->links()}}
+
     
 </div>
 </div>

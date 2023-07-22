@@ -1,6 +1,6 @@
 <div class="container-fluid p-0">
   <footer>
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-5">
       <li class="nav-item"><a href="{{route('home')}}" class="nav-link px-2 text-white">Home</a></li>
       <li class="nav-item"><a href="{{route('product.index')}}" class="nav-link px-2 text-white">{{__('ui.nav1')}}</a></li>
     </ul>

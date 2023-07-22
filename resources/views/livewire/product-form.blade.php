@@ -1,8 +1,8 @@
-<div class="backgroundLinear">
+<div class="backgroundLinear min-vh-100">
   
   <!--Content before waves-->
   <div class="inner-header-form">
-    <div class="row mb-5 w-100">
+    <div class="row w-100">
       <h2 class="margin-title">{{__('ui.form1')}}</h2>
       
       <div class="col-12 col-md-6 d-flex justify-content-center pe-0">
@@ -72,44 +72,17 @@
                     @endforeach
                   </div>
                 </div>
+            @endif
+
               </div>
             </div>
-            
-       
-            
-            @endif
           </div>
-        </div>
-
-        
-        
-        
-        
-      </form>
-      
+        </div> 
+      </form> 
     </div>
-    
-    
+  </div>
+  <!--Header ends-->
     
 
-  
-  
-  <!--Waves Container-->
-  <div>
-    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-    <defs>
-      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-    </defs>
-    <g class="parallax">
-      <use xlink:href="#gentle-wave" x="48" y="0" fill="#3c6e71" />
-      <use xlink:href="#gentle-wave" x="48" y="3" fill="#ffffff" />
-      <use xlink:href="#gentle-wave" x="48" y="5" fill="#d9d9d9" />
-      <use xlink:href="#gentle-wave" x="48" y="7" fill="#284b63" />
-    </g>
-  </svg>
-</div>
-<!--Waves end-->
 
-</div>
-<!--Header ends-->
+

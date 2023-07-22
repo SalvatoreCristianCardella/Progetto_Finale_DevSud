@@ -1,7 +1,6 @@
 .inner-header-form {
   width:100%;
   margin-top: 170px;
-  padding: 0;
 }
 
 .margin-title{
@@ -10,22 +9,10 @@
 }
 
 .backgroundLinear{
-  position:relative;
   text-align:center;
-  background: linear-gradient(360deg, #284b63 0%, #3c6e71 100%);
+  background: linear-gradient(180deg, #284b63 0%, #3c6e71 100%);
   color:white;
-  margin-top: -80px;
-}
-
-
-@media screen and (max-width: 992px) {
-    .box-form {
-      width: 315px;
-      padding-top:90px;
-      padding-bottom: 450px;
-      height: 780px;
-      margin-bottom: 50px;
-    }
+  margin-top: -90px;
 }
 
 
@@ -36,7 +23,6 @@
     background-repeat: no-repeat;
     margin-top: 20px;
 }
-
 
 
 .retro{

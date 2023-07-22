@@ -14,7 +14,7 @@ class FrontController extends Controller
     }
 
     public function show(Category $category){
-        $productscategory = $category->products()->where('is_accepted',true)->get();
+        $productscategory = $category->products()->where('is_accepted',true)->paginate(6);
      return view('category.show',compact('productscategory','category'));
     }
     public function searchProduct(Request $request){

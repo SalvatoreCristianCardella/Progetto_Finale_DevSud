@@ -145,9 +145,8 @@ p {
 }
 
 footer{
-  background-color: var(--blue);
+  background: linear-gradient(360deg, #284b63 0%, #3c6e71 100%);
   padding: 0px;
-  /* margin-top: 150px; */
 }
 
 
